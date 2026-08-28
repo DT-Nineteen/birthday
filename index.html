@@ -4,28 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Birthday Studio - tao thiep sinh nhat online mien phi, nang cap link dep va QR cute de gui ban be.">
+    <meta name="description" content="Birthday Studio tao thiep sinh nhat anime, link dep va QR cute de gui qua Zalo, Messenger hoac in thiep.">
     <title>Birthday Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="app-shell">
-        <section class="studio" aria-labelledby="studio-title">
-            <div class="studio__panel editor-panel">
-                <div class="brand-row">
-                    <div class="brand-mark" aria-hidden="true">B</div>
-                    <div>
-                        <p class="eyebrow">Birthday Studio</p>
-                        <h1 id="studio-title">Tao thiep sinh nhat online trong 2 phut</h1>
+    <main id="wrapper">
+        <div class="confetti-field" aria-hidden="true"></div>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="flag__birthday" aria-hidden="true">
+                <img src="./images/1.png" alt="" class="flag__left">
+                <img src="./images/1.png" alt="" class="flag__right">
+            </div>
+
+            <div class="hero__copy">
+                <p class="brand-pill">Birthday Studio</p>
+                <div class="title" id="hero-title" aria-label="Birthday Studio">
+                    <h1 class="happy">
+                        <span style="--t: .5s;">B</span>
+                        <span style="--t: .65s;">i</span>
+                        <span style="--t: .8s;">r</span>
+                        <span style="--t: .95s;">t</span>
+                        <span style="--t: 1.1s;">h</span>
+                        <span style="--t: 1.25s;">d</span>
+                        <span style="--t: 1.4s;">a</span>
+                        <span style="--t: 1.55s;">y</span>
+                    </h1>
+                    <h1 class="birthday">
+                        <span style="--t: 1.75s;">S</span>
+                        <span style="--t: 1.9s;">t</span>
+                        <span style="--t: 2.05s;">u</span>
+                        <span style="--t: 2.2s;">d</span>
+                        <span style="--t: 2.35s;">i</span>
+                        <span style="--t: 2.5s;">o</span>
+                    </h1>
+                    <div class="hat" aria-hidden="true">
+                        <img src="./images/hat.png" alt="">
                     </div>
                 </div>
 
-                <p class="intro-copy">
-                    Tao template mien phi. Khi can gui dep hon, ban ban them link custom va bo QR mau hong de in len thiep, hop qua hoac gui Zalo.
+                <p class="hero__lead">
+                    Bien mot loi chuc thanh website sinh nhat anime co nhac, thiep mo 3D, link custom va QR mau hong de gui ban be that xinh.
                 </p>
 
-                <form class="card-builder" id="card-builder">
+                <div class="hero__actions">
+                    <button class="gift-button" id="open-card" type="button">
+                        <span class="gift-button__icon" aria-hidden="true"></span>
+                        Mo demo thiep
+                    </button>
+                    <a class="ghost-button" href="#builder">Tao template mien phi</a>
+                </div>
+
+                <div class="offer-row" aria-label="Bang gia nhanh">
+                    <article>
+                        <span>Free</span>
+                        <strong>Tao va xem preview</strong>
+                    </article>
+                    <article>
+                        <span>39k</span>
+                        <strong>Link dep + QR cute</strong>
+                    </article>
+                    <article>
+                        <span>79k</span>
+                        <strong>Mo thiep theo gio + analytics</strong>
+                    </article>
+                </div>
+            </div>
+
+            <div class="hero__stage">
+                <div class="floating-badge">
+                    <span>custom url</span>
+                    <strong id="hero-slug">birthday.site/birthday</strong>
+                </div>
+
+                <div class="account-card">
+                    <div class="portrait-ring">
+                        <img src="./images/unnamed.png" alt="Anh anime birthday">
+                    </div>
+                    <div class="name-tag">
+                        <span id="hero-name">For Birthday</span>
+                    </div>
+                    <div class="balloon_one" aria-hidden="true">
+                        <img src="./images/balloon1.png" alt="">
+                    </div>
+                    <div class="balloon_two" aria-hidden="true">
+                        <img src="./images/balloon2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="qr-ticket">
+                    <img src="./images/birthday-qr-pink-icon.png" alt="Mau QR cute">
+                    <div>
+                        <span>QR pack</span>
+                        <strong>Gui Zalo, in thiep, dan len hop qua</strong>
+                    </div>
+                </div>
+
+                <div class="rotate-badge" aria-hidden="true">
+                    <div class="rotate-badge__text">
+                        <span style="--i: 1;">q</span>
+                        <span style="--i: 2;">r</span>
+                        <span style="--i: 3;">-</span>
+                        <span style="--i: 4;">l</span>
+                        <span style="--i: 5;">i</span>
+                        <span style="--i: 6;">n</span>
+                        <span style="--i: 7;">k</span>
+                        <span style="--i: 8;">-</span>
+                        <span style="--i: 9;">g</span>
+                        <span style="--i: 10;">i</span>
+                        <span style="--i: 11;">f</span>
+                        <span style="--i: 12;">t</span>
+                    </div>
+                    <span class="badge-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="builder-section" id="builder" aria-labelledby="builder-title">
+            <div class="section-heading">
+                <p class="brand-pill">Free editor</p>
+                <h2 id="builder-title">Nhap thong tin la thiep ben phai doi ngay</h2>
+            </div>
+
+            <div class="builder-grid">
+                <form class="builder-form" id="card-builder">
                     <label>
                         Ten nguoi nhan
                         <input id="recipient-name" type="text" value="Birthday" maxlength="24" autocomplete="off">
@@ -37,141 +141,100 @@
                     </label>
 
                     <label>
-                        Loi chuc ngan
-                        <textarea id="birthday-message" rows="4" maxlength="180">Chuc tuoi moi that vui, co nhieu dieu de mong cho va nhieu khoanh khac de nho.</textarea>
+                        Loi chuc
+                        <textarea id="birthday-message" rows="5" maxlength="180">Chuc tuoi moi that vui, gap nhieu dieu xinh xiu va luon co ly do de mim cuoi moi ngay.</textarea>
                     </label>
 
-                    <div class="template-row" role="group" aria-label="Chon mau template">
-                        <button type="button" class="template-chip is-active" data-theme="rose">Pink anime</button>
-                        <button type="button" class="template-chip" data-theme="mint">Mint cafe</button>
-                        <button type="button" class="template-chip" data-theme="cream">Soft cream</button>
-                    </div>
-
                     <label>
-                        Link dep muon dat
+                        Link dep muon ban
                         <span class="slug-input">
                             <span>birthday.site/</span>
                             <input id="custom-slug" type="text" value="birthday" maxlength="32" autocomplete="off">
                         </span>
                     </label>
 
-                    <div class="upgrade-box">
-                        <label class="check-row">
-                            <input id="qr-pack" type="checkbox" checked>
-                            <span>Bo QR cute de in thiep va gui chat</span>
-                        </label>
-                        <label class="check-row">
-                            <input id="no-watermark" type="checkbox" checked>
-                            <span>Bo watermark va cho sua lai trong 24h</span>
-                        </label>
+                    <div class="template-row" role="group" aria-label="Chon style">
+                        <button type="button" class="template-chip is-active" data-theme="pink">Anime pink</button>
+                        <button type="button" class="template-chip" data-theme="mint">Cafe mint</button>
+                        <button type="button" class="template-chip" data-theme="night">Star night</button>
                     </div>
                 </form>
 
-                <div class="checkout-strip">
-                    <div>
-                        <span class="mini-label">Goi de ban thu tien</span>
-                        <strong id="price-total">39.000d</strong>
-                    </div>
-                    <a class="primary-action" id="order-link" href="#pricing">Dat link + QR</a>
-                </div>
-            </div>
-
-            <div class="studio__panel preview-panel" id="preview-card">
-                <div class="preview-toolbar">
-                    <span id="preview-url">birthday.site/birthday</span>
-                    <span class="status-dot">Live preview</span>
-                </div>
-
-                <div class="birthday-card">
-                    <div class="birthday-card__copy">
+                <div class="live-card" id="live-card">
+                    <div class="live-card__ribbon">Live template</div>
+                    <div class="live-card__content">
                         <span id="preview-date">07 August</span>
-                        <h2 id="preview-name">Happy Birthday</h2>
-                        <p id="preview-message">Chuc tuoi moi that vui, co nhieu dieu de mong cho va nhieu khoanh khac de nho.</p>
+                        <h3 id="preview-name">Happy Birthday Birthday</h3>
+                        <p id="preview-message">Chuc tuoi moi that vui, gap nhieu dieu xinh xiu va luon co ly do de mim cuoi moi ngay.</p>
+                        <button type="button" id="preview-open">Mo ban demo</button>
                     </div>
-                    <div class="portrait-wrap">
-                        <img src="images/unnamed.png" alt="Anh anime sinh nhat">
-                    </div>
-                </div>
-
-                <div class="qr-preview">
-                    <img src="images/birthday-qr-pink-icon.png" alt="Mau QR sinh nhat mau hong">
-                    <div>
-                        <span class="mini-label">QR pack</span>
-                        <strong>PNG vuong, nen hong, sticker cute</strong>
-                        <p>Hop de in vao thiep vat ly, dan len hop qua, hoac gui truc tiep qua Zalo va Messenger.</p>
-                    </div>
+                    <img class="live-card__person" src="./images/unnamed.png" alt="Nhan vat anime">
                 </div>
             </div>
         </section>
 
-        <section class="section-band metrics" aria-label="Loi the san pham">
-            <article>
-                <strong>Free</strong>
-                <span>Tao template va preview khong tinh phi.</span>
-            </article>
-            <article>
-                <strong>39k</strong>
-                <span>Link dep, QR cute, bo watermark.</span>
-            </article>
-            <article>
-                <strong>79k</strong>
-                <span>Premium: nhac, khoa gio mo thiep, thong ke quet QR.</span>
-            </article>
-        </section>
-
-        <section class="business-grid" aria-labelledby="pricing-title">
-            <div class="section-copy">
-                <p class="eyebrow">Cach kiem tien</p>
-                <h2 id="pricing-title">Dung free de keo nguoi dung, thu tien o khoanh khac ho muon gui that dep</h2>
-                <p>
-                    San pham nen ban theo cam xuc va tien loi: nguoi dung tao thu mien phi, thay dep, roi tra tien de co URL gon, QR chinh chu va goi chia se san sang gui.
-                </p>
+        <section class="package-section" aria-labelledby="package-title">
+            <div class="section-heading">
+                <p class="brand-pill">Monetize</p>
+                <h2 id="package-title">Ban cai nguoi dung that su can khi dem tang</h2>
             </div>
 
-            <div class="pricing-list" id="pricing">
-                <article>
-                    <span>Starter</span>
-                    <h3>0d</h3>
-                    <p>Template co san, xem preview, link mac dinh co watermark.</p>
-                </article>
-                <article class="is-featured">
-                    <span>Gift Link</span>
-                    <h3>39.000d</h3>
-                    <p>Custom URL, QR cute, khong watermark, sua noi dung trong 24h.</p>
-                </article>
-                <article>
-                    <span>Premium</span>
-                    <h3>79.000d</h3>
-                    <p>Nhac nen, hen gio mo thiep, khoa mat khau, thong ke luot xem.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="ops-flow" aria-labelledby="flow-title">
-            <h2 id="flow-title">Flow MVP de ban ngay</h2>
-            <div class="flow-steps">
+            <div class="package-grid">
                 <article>
                     <span>01</span>
-                    <h3>Tao thiep</h3>
-                    <p>Nguoi dung nhap ten, ngay, anh, loi chuc va chon style.</p>
+                    <h3>Template mien phi</h3>
+                    <p>Cho tao, preview va chia se ban watermark de keo traffic tu TikTok, Facebook, Zalo.</p>
                 </article>
-                <article>
+                <article class="featured-package">
                     <span>02</span>
-                    <h3>Preview mien phi</h3>
-                    <p>Cho xem ban demo co watermark va link mac dinh.</p>
+                    <h3>Gift Link - 39.000d</h3>
+                    <p>Custom slug, QR cute, anh story, anh vuong va bo watermark. Day la goi nen ban dau tien.</p>
                 </article>
                 <article>
                     <span>03</span>
-                    <h3>Upsell 39k</h3>
-                    <p>Ban custom slug, QR cute va file san sang gui/in.</p>
-                </article>
-                <article>
-                    <span>04</span>
-                    <h3>Giao hang</h3>
-                    <p>Tra ve URL, anh QR, anh story va anh thiep trong mot goi.</p>
+                    <h3>Premium - 79.000d</h3>
+                    <p>Nhac nen, hen gio mo thiep, khoa mat khau va thong ke luot xem/quet QR.</p>
                 </article>
             </div>
         </section>
+
+        <div class="decorate_star star1" aria-hidden="true"></div>
+        <div class="decorate_star star2" aria-hidden="true"></div>
+        <div class="decorate_star star3" aria-hidden="true"></div>
+        <div class="decorate_flower--one" aria-hidden="true">
+            <img src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_bottom" aria-hidden="true">
+            <img src="./images/decorate.png" alt="">
+        </div>
+        <div class="smiley__icon" aria-hidden="true">
+            <img src="./images/smiley_icon.png" alt="">
+        </div>
+
+        <div class="boxMail" id="mail-modal" aria-hidden="true">
+            <button class="modal-close" type="button" aria-label="Dong thiep">x</button>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="images/unnamed.png" alt="">
+                    </div>
+                    <p class="username">To: <span id="mail-to">Birthday</span></p>
+                    <h3>Gift Link</h3>
+                    <small id="mail-slug">birthday.site/birthday</small>
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <span class="letter-date" id="mail-date">07 August</span>
+                        <h3>Happy Birthday</h3>
+                        <p id="mail-message">Chuc tuoi moi that vui, gap nhieu dieu xinh xiu va luon co ly do de mim cuoi moi ngay.</p>
+                        <div class="mail-qr">
+                            <img src="images/birthday-qr-pink-icon.png" alt="QR sinh nhat">
+                            <strong>QR cute + custom URL</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -179,19 +242,21 @@
             name: document.querySelector("#recipient-name"),
             date: document.querySelector("#birthday-date"),
             message: document.querySelector("#birthday-message"),
-            slug: document.querySelector("#custom-slug"),
-            qrPack: document.querySelector("#qr-pack"),
-            noWatermark: document.querySelector("#no-watermark")
+            slug: document.querySelector("#custom-slug")
         };
 
-        const preview = {
-            name: document.querySelector("#preview-name"),
-            date: document.querySelector("#preview-date"),
-            message: document.querySelector("#preview-message"),
-            url: document.querySelector("#preview-url"),
-            price: document.querySelector("#price-total"),
-            order: document.querySelector("#order-link"),
-            card: document.querySelector("#preview-card")
+        const targets = {
+            heroName: document.querySelector("#hero-name"),
+            heroSlug: document.querySelector("#hero-slug"),
+            previewName: document.querySelector("#preview-name"),
+            previewDate: document.querySelector("#preview-date"),
+            previewMessage: document.querySelector("#preview-message"),
+            mailTo: document.querySelector("#mail-to"),
+            mailSlug: document.querySelector("#mail-slug"),
+            mailDate: document.querySelector("#mail-date"),
+            mailMessage: document.querySelector("#mail-message"),
+            liveCard: document.querySelector("#live-card"),
+            modal: document.querySelector("#mail-modal")
         };
 
         const slugify = (value) => value
@@ -202,13 +267,6 @@
             .replace(/^-+|-+$/g, "")
             .slice(0, 32);
 
-        function updatePrice() {
-            let total = 19000;
-            if (fields.qrPack.checked) total += 20000;
-            if (fields.noWatermark.checked) total += 0;
-            preview.price.textContent = `${total.toLocaleString("vi-VN")}d`;
-        }
-
         function updatePreview() {
             const name = fields.name.value.trim() || "Birthday";
             const date = fields.date.value.trim() || "Ngay sinh nhat";
@@ -216,19 +274,39 @@
             const slug = slugify(fields.slug.value || name) || "birthday";
 
             fields.slug.value = slug;
-            preview.name.textContent = `Happy Birthday ${name}`;
-            preview.date.textContent = date;
-            preview.message.textContent = message;
-            preview.url.textContent = `birthday.site/${slug}`;
-            preview.order.href = `mailto:hello@birthday.studio?subject=Dat link ${slug}&body=Minh muon dat link birthday.site/${slug} kem QR cute.`;
-            updatePrice();
+            targets.heroName.textContent = `For ${name}`;
+            targets.heroSlug.textContent = `birthday.site/${slug}`;
+            targets.previewName.textContent = `Happy Birthday ${name}`;
+            targets.previewDate.textContent = date;
+            targets.previewMessage.textContent = message;
+            targets.mailTo.textContent = name;
+            targets.mailSlug.textContent = `birthday.site/${slug}`;
+            targets.mailDate.textContent = date;
+            targets.mailMessage.textContent = message;
         }
+
+        function openMail() {
+            targets.modal.classList.add("active");
+            targets.modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeMail() {
+            targets.modal.classList.remove("active");
+            targets.modal.setAttribute("aria-hidden", "true");
+        }
+
+        document.querySelector("#open-card").addEventListener("click", openMail);
+        document.querySelector("#preview-open").addEventListener("click", openMail);
+        document.querySelector(".modal-close").addEventListener("click", closeMail);
+        targets.modal.addEventListener("click", (event) => {
+            if (event.target === targets.modal) closeMail();
+        });
 
         document.querySelectorAll(".template-chip").forEach((button) => {
             button.addEventListener("click", () => {
                 document.querySelectorAll(".template-chip").forEach((item) => item.classList.remove("is-active"));
                 button.classList.add("is-active");
-                preview.card.dataset.theme = button.dataset.theme;
+                targets.liveCard.dataset.theme = button.dataset.theme;
             });
         });
 
@@ -236,6 +314,16 @@
             field.addEventListener("input", updatePreview);
             field.addEventListener("change", updatePreview);
         });
+
+        const confettiField = document.querySelector(".confetti-field");
+        for (let i = 0; i < 42; i += 1) {
+            const piece = document.createElement("span");
+            piece.style.setProperty("--x", `${Math.random() * 100}%`);
+            piece.style.setProperty("--delay", `${Math.random() * 6}s`);
+            piece.style.setProperty("--dur", `${6 + Math.random() * 5}s`);
+            piece.style.setProperty("--rot", `${Math.random() * 360}deg`);
+            confettiField.appendChild(piece);
+        }
 
         updatePreview();
     </script>
