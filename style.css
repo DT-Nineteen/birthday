@@ -23,6 +23,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -51,6 +52,7 @@ a {
 #wrapper {
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
     isolation: isolate;
 }
 
@@ -152,15 +154,16 @@ a {
     position: relative;
     margin: 18px 0 0;
     font-family: "Titan One", sans-serif;
-    font-size: clamp(2.5rem, 8vw, 6.7rem);
-    line-height: 0.9;
+    font-size: clamp(2.45rem, 4vw, 3.55rem);
+    line-height: 0.95;
     perspective: 1000px;
 }
 
 .title h1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     letter-spacing: 0;
+    white-space: nowrap;
 }
 
 .title span {
@@ -333,6 +336,14 @@ a {
 .hero__stage {
     position: relative;
     min-height: 640px;
+    min-width: 0;
+}
+
+.hero__copy,
+.builder-grid > *,
+.builder-form,
+.live-card {
+    min-width: 0;
 }
 
 .account-card {
@@ -1010,39 +1021,58 @@ textarea:focus,
         padding-top: 100px;
     }
 
+    .flag__birthday .flag__left {
+        transform: rotate(-8deg) translate(0, 24px);
+    }
+
+    .flag__birthday .flag__right {
+        transform: rotate(8deg) translate(0, 24px) scaleX(-1);
+    }
+
     .hero__stage {
-        min-height: 600px;
+        min-height: auto;
+        display: grid;
+        gap: 14px;
+        padding-top: 10px;
+    }
+
+    .floating-badge,
+    .account-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        margin: 0 auto;
+        transform: translateY(24px) scale(.96);
+        animation: stackPop .72s forwards cubic-bezier(.2, 1.2, .28, 1);
+    }
+
+    .floating-badge {
+        width: min(520px, 100%);
+        animation-delay: .15s;
     }
 
     .account-card {
-        inset: 88px 50%;
-        transform: translate(50%, 760px) rotate(-3deg);
-        animation-name: topBoxImageMobile;
-    }
-
-    @keyframes topBoxImageMobile {
-        to {
-            transform: translate(50%, 0) rotate(-3deg);
-        }
+        width: min(504px, 92%);
+        min-height: 430px;
+        animation-delay: .3s;
     }
 
     .qr-ticket {
-        right: 50%;
-        transform: translateX(50%) scale(0);
-        animation-name: popInMobile;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(520px, 100%);
+        margin: 0 auto;
+        transform: translateY(24px) scale(.96);
+        animation: stackPop .72s .45s forwards cubic-bezier(.2, 1.2, .28, 1);
     }
 
-    @keyframes popInMobile {
-        0% {
-            transform: translateX(50%) scale(0) rotate(-7deg);
-        }
-
-        70% {
-            transform: translateX(50%) scale(1.08) rotate(2deg);
-        }
-
-        100% {
-            transform: translateX(50%) scale(1) rotate(0);
+    @keyframes stackPop {
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
     }
 
@@ -1064,11 +1094,21 @@ textarea:focus,
     }
 
     .flag__birthday img {
-        width: 230px;
+        width: 170px;
     }
 
     .title {
-        font-size: clamp(2.2rem, 15vw, 4.2rem);
+        font-size: clamp(1.95rem, 9.4vw, 2.35rem);
+    }
+
+    .title .happy,
+    .title .birthday {
+        text-shadow:
+            2px 2px var(--line),
+            -2px 2px var(--line),
+            2px -2px var(--line),
+            -2px -2px var(--line),
+            3px 5px 0 var(--line);
     }
 
     .hat {
@@ -1087,7 +1127,7 @@ textarea:focus,
     }
 
     .hero__stage {
-        min-height: 520px;
+        min-height: auto;
     }
 
     .account-card {
@@ -1106,7 +1146,7 @@ textarea:focus,
     }
 
     .balloon_one {
-        left: -34px;
+        left: 0;
         top: -54px;
     }
 
@@ -1121,8 +1161,6 @@ textarea:focus,
     }
 
     .floating-badge {
-        top: 14px;
-        left: 0;
         width: 100%;
     }
 
@@ -1132,7 +1170,6 @@ textarea:focus,
 
     .qr-ticket {
         width: 100%;
-        bottom: 0;
     }
 
     .builder-section,
