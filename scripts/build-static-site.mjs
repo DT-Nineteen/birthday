@@ -79,7 +79,7 @@ export default {
     return new Response(decodeBase64(asset.base64), {
       headers: {
         "content-type": asset.mime,
-        "cache-control": url.pathname === "/" || url.pathname.endsWith(".html") || url.pathname.endsWith(".css")
+        "cache-control": asset.mime.startsWith("text/html") || url.pathname.endsWith(".css")
           ? "no-cache"
           : "public, max-age=31536000, immutable"
       }
