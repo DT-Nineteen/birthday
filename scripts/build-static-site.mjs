@@ -37,7 +37,7 @@ function mimeFor(path) {
 
 const sourceFiles = walk(root).filter((path) => {
   const rel = relative(root, path).replaceAll(sep, "/");
-  return rel === "index.html" || rel === "style.css" || rel.startsWith("images/");
+  return (rel.endsWith(".html") && !rel.includes("/")) || rel === "style.css" || rel.startsWith("images/");
 });
 
 const entries = {};
@@ -49,6 +49,11 @@ for (const path of sourceFiles) {
     mime: mimeFor(path),
     base64: buffer.toString("base64")
   };
+
+  if (rel.endsWith(".html")) {
+    const cleanRoute = `/${rel.replace(/\.html$/, "")}`;
+    entries[cleanRoute] = entries[route];
+  }
 }
 entries["/"] = entries["/index.html"];
 

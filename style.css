@@ -1011,13 +1011,121 @@ textarea:focus,
     object-fit: cover;
 }
 
+.gift-page {
+    background:
+        radial-gradient(circle at 14% 14%, rgba(255, 255, 255, .9) 0 0.8%, transparent 1%),
+        radial-gradient(circle at 82% 18%, rgba(255, 243, 191, .9) 0 1.1%, transparent 1.3%),
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.75) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.75) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.75) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.75) 76%, transparent 77%, transparent),
+        linear-gradient(135deg, #ffe4ee 0%, #fff7c9 46%, #d6f5f0 100%);
+    background-size: 100% 100%, 100% 100%, 70px 70px, 70px 70px, auto;
+}
+
+.hibeo-hero {
+    position: relative;
+    min-height: 100vh;
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 118px 0 54px;
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+    gap: 34px;
+    align-items: center;
+}
+
+.hibeo-title .hibeo-name {
+    color: var(--cream);
+    text-shadow:
+        4px 4px var(--line),
+        -4px 4px var(--line),
+        4px -4px var(--line),
+        -4px -4px var(--line),
+        5px 10px 0 var(--line);
+}
+
+.hibeo-title .hibeo-name span:nth-child(3) {
+    min-width: .28em;
+}
+
+.hibeo-lead {
+    max-width: 640px;
+    margin: 26px 0 24px;
+    font-size: clamp(1.1rem, 2.4vw, 1.42rem);
+    line-height: 1.65;
+}
+
+.hibeo-stage {
+    position: relative;
+    min-height: 650px;
+    min-width: 0;
+}
+
+.hibeo-photo-card {
+    position: absolute;
+    inset: 76px 28px auto auto;
+    width: min(500px, 88%);
+    min-height: 510px;
+    display: grid;
+    place-items: center;
+    border: 4px solid var(--line);
+    border-radius: 44% 56% 47% 53% / 54% 46% 54% 46%;
+    background:
+        radial-gradient(circle at 82% 20%, #fff 0 8%, transparent 9%),
+        linear-gradient(145deg, #fff 0%, var(--pink-soft) 52%, #fff8c7 100%);
+    box-shadow: var(--shadow);
+    transform: translateY(760px) rotate(-3deg);
+    animation: topBoxImage 2.6s 2s forwards cubic-bezier(.2, .9, .28, 1);
+}
+
+.hibeo-photo-card .portrait-ring {
+    width: min(382px, 78%);
+}
+
+.hibeo-note {
+    position: absolute;
+    left: 0;
+    bottom: 48px;
+    z-index: 3;
+    width: min(340px, 78%);
+    padding: 16px 18px;
+    border: 3px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 7px 8px 0 rgba(45, 37, 48, .15);
+    transform: scale(0);
+    animation: popIn .8s 4.1s forwards cubic-bezier(.2, 1.55, .38, 1);
+}
+
+.hibeo-note span {
+    display: block;
+    color: var(--pink);
+    font-family: "Coiny", system-ui;
+}
+
+.hibeo-note strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 1.18rem;
+    line-height: 1.25;
+}
+
+.hibeo-mail .card2-content {
+    gap: 12px;
+}
+
+.hibeo-mail .card2 p {
+    font-size: 1.02rem;
+}
+
 @media (max-width: 980px) {
     .hero,
-    .builder-grid {
+    .builder-grid,
+    .hibeo-hero {
         grid-template-columns: 1fr;
     }
 
-    .hero {
+    .hero,
+    .hibeo-hero {
         padding-top: 100px;
     }
 
@@ -1079,16 +1187,45 @@ textarea:focus,
     .package-grid {
         grid-template-columns: 1fr;
     }
+
+    .hibeo-stage {
+        min-height: auto;
+        display: grid;
+        gap: 14px;
+        padding-top: 10px;
+    }
+
+    .hibeo-photo-card,
+    .hibeo-note {
+        position: relative;
+        inset: auto;
+        margin: 0 auto;
+        transform: translateY(24px) scale(.96);
+        animation: stackPop .72s forwards cubic-bezier(.2, 1.2, .28, 1);
+    }
+
+    .hibeo-photo-card {
+        width: min(520px, 92%);
+        min-height: 450px;
+        animation-delay: .25s;
+    }
+
+    .hibeo-note {
+        width: min(520px, 100%);
+        animation-delay: .4s;
+    }
 }
 
 @media (max-width: 640px) {
     .hero,
+    .hibeo-hero,
     .builder-section,
     .package-section {
         width: min(100% - 20px, 1180px);
     }
 
-    .hero {
+    .hero,
+    .hibeo-hero {
         padding-top: 86px;
         gap: 12px;
     }
@@ -1102,7 +1239,8 @@ textarea:focus,
     }
 
     .title .happy,
-    .title .birthday {
+    .title .birthday,
+    .hibeo-title .hibeo-name {
         text-shadow:
             2px 2px var(--line),
             -2px 2px var(--line),
@@ -1217,5 +1355,32 @@ textarea:focus,
 
     .card2 h3 {
         font-size: 2.35rem;
+    }
+
+    .hibeo-photo-card {
+        width: min(350px, 92%);
+        min-height: 370px;
+    }
+
+    .hibeo-photo-card .portrait-ring {
+        width: min(255px, 76%);
+    }
+
+    .hibeo-note {
+        width: 100%;
+    }
+
+    .hibeo-stage .balloon_one {
+        left: -6px;
+        top: -48px;
+    }
+
+    .hibeo-stage .balloon_two {
+        right: -12px;
+        top: 166px;
+    }
+
+    .hibeo-stage {
+        overflow-x: clip;
     }
 }
