@@ -56,6 +56,7 @@ for (const path of sourceFiles) {
   }
 }
 entries["/"] = entries["/index.html"];
+entries["/hibeo"] = entries["/index.html"];
 
 const worker = `const assets = ${JSON.stringify(entries)};
 
