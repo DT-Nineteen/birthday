@@ -16,6 +16,22 @@ function setField(field, value) {
   });
 }
 
+function applyPortrait(config) {
+  document.querySelectorAll("[data-card-portrait]").forEach((image) => {
+    image.style.setProperty("--portrait-x", `${config.recipient.portraitPosition.x}%`);
+    image.style.setProperty("--portrait-y", `${config.recipient.portraitPosition.y}%`);
+    image.style.setProperty("--portrait-scale", config.recipient.portraitScale);
+    if (image.src !== new URL(config.recipient.portraitUrl, window.location.href).href) {
+      image.src = config.recipient.portraitUrl;
+    }
+    image.onerror = () => {
+      image.onerror = null;
+      image.src = DEFAULT_CARD_CONFIG.recipient.portraitUrl;
+      window.parent?.postMessage({ type: "birthday-card:portrait-error" }, window.location.origin);
+    };
+  });
+}
+
 function addDateStars() {
   if (!dateContainer || dateContainer.querySelector("i")) return;
   const star = document.createElement("i");
@@ -60,6 +76,7 @@ export function applyCardConfig(value, options = {}) {
   setField("cta-label", `${config.letter.buttonLabel} ${config.recipient.name}`);
   setField("cover-recipient", `To: ${recipientLabel}`);
   setField("message", config.letter.message);
+  applyPortrait(config);
   renderDate(config.occasion.dateLabel, options.animateDate === true && !dateHasRevealed);
   return config;
 }

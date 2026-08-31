@@ -39,7 +39,8 @@ const sourceFiles = walk(root).filter((path) => {
   const rel = relative(root, path).replaceAll(sep, "/");
   const isRootPageOrStyle = !rel.includes("/") && (rel.endsWith(".html") || rel.endsWith(".css"));
   const isBrowserScript = rel.startsWith("scripts/") && rel.endsWith(".js") && rel !== "scripts/build-static-site.mjs";
-  return isRootPageOrStyle || isBrowserScript || rel.startsWith("images/");
+  const isTemplateAsset = rel.startsWith("templates/") && [".html", ".css", ".js"].some((extension) => rel.endsWith(extension));
+  return isRootPageOrStyle || isBrowserScript || isTemplateAsset || rel.startsWith("images/");
 });
 
 const entries = {};
@@ -81,7 +82,7 @@ export default {
     return new Response(decodeBase64(asset.base64), {
       headers: {
         "content-type": asset.mime,
-        "cache-control": asset.mime.startsWith("text/html") || url.pathname.endsWith(".css")
+        "cache-control": asset.mime.startsWith("text/html") || url.pathname.endsWith(".css") || url.pathname.endsWith(".js")
           ? "no-cache"
           : "public, max-age=31536000, immutable"
       }

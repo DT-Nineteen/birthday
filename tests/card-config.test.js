@@ -8,6 +8,7 @@ import {
   normalizeCardConfig,
   validateEditableFields
 } from "../scripts/card-config.js";
+import { TEMPLATES, getTemplate } from "../scripts/template-registry.js";
 
 const execFileAsync = promisify(execFile);
 
@@ -41,6 +42,21 @@ test("keeps an intentionally cleared editable field for live preview", () => {
   assert.equal(result.occasion.dateLabel, "");
 });
 
+test("normalizes template and portrait transform values", () => {
+  const result = normalizeCardConfig({
+    templateId: "midnight-disco",
+    recipient: { portraitPosition: { x: -20, y: 140 }, portraitScale: 9 }
+  });
+  assert.equal(result.templateId, "midnight-disco");
+  assert.deepEqual(result.recipient.portraitPosition, { x: 0, y: 100 });
+  assert.equal(result.recipient.portraitScale, 2.5);
+});
+
+test("template registry has unique ids and safe fallback", () => {
+  assert.equal(new Set(TEMPLATES.map(({ id }) => id)).size, 3);
+  assert.equal(getTemplate("missing").id, "pink-celebration");
+});
+
 test("production build contains builder routes and browser scripts", async () => {
   await execFileAsync(process.execPath, ["scripts/build-static-site.mjs"], {
     cwd: new URL("..", import.meta.url)
@@ -50,4 +66,6 @@ test("production build contains builder routes and browser scripts", async () =>
   assert.match(worker, /"\/builder\.css"/);
   assert.match(worker, /"\/scripts\/card-config\.js"/);
   assert.match(worker, /"\/scripts\/card-preview\.js"/);
+  assert.match(worker, /"\/templates\/midnight-disco\/index\.html"/);
+  assert.match(worker, /"\/templates\/paper-garden\/index\.html"/);
 });

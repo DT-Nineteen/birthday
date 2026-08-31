@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paper Garden Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="garden-stage">
+    <div class="paper-shadow paper-one"></div><div class="paper-shadow paper-two"></div>
+    <div class="garden-sprite marigold" aria-hidden="true"></div><div class="garden-sprite peony" aria-hidden="true"></div><div class="garden-sprite eucalyptus" aria-hidden="true"></div><div class="garden-sprite butterfly" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <section class="garden-copy">
+      <p class="postmark">A little garden for</p>
+      <h1>Happy<br><em>Birthday</em></h1>
+      <div class="stitched-date"><span data-card-field="date-label">07 August</span></div>
+      <p class="garden-name">Dear <strong data-card-field="recipient-name">Hi Beo</strong>,</p>
+      <button class="note-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Click Here Hi Beo</span><b aria-hidden="true">✿</b></button>
+    </section>
+    <section class="botanical-frame" aria-label="Chân dung người nhận">
+      <div class="tape tape-top"></div><div class="tape tape-bottom"></div>
+      <div class="portrait-paper"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+      <p data-card-field="recipient-name">Hi Beo</p>
+    </section>
+    <p class="made-note">pressed with love · birthday edition</p>
+  </main>
+  <section class="garden-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <article class="folding-note">
+      <div class="note-cover"><span>For you</span><strong data-card-field="cover-recipient">To: Hi Beo 🐷</strong><i aria-hidden="true">♥</i></div>
+      <div class="note-message"><p class="note-date" data-card-field="date-label">07 August</p><h2 data-card-field="recipient-name">Hi Beo</h2><p data-card-field="message">Happy birthday...</p></div>
+    </article>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

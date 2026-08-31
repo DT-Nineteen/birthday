@@ -18,12 +18,42 @@
           <span class="brand-spark" aria-hidden="true">✦</span>
           <span>Xưởng thiệp</span>
         </a>
-        <p class="eyebrow">Thiệp sinh nhật · Basic</p>
+        <p class="eyebrow">Thiệp sinh nhật · Studio</p>
         <h1>Một lời chúc,<br>thành một niềm vui.</h1>
         <p class="intro">Nhập nội dung bên dưới. Tấm thiệp sẽ nhận thay đổi ngay lập tức.</p>
       </header>
 
       <form id="card-editor" novalidate>
+        <fieldset class="template-picker">
+          <legend>Chọn phong cách</legend>
+          <div class="template-list" id="template-list"></div>
+        </fieldset>
+
+        <fieldset class="portrait-editor">
+          <legend>Ảnh người nhận</legend>
+          <div class="portrait-row">
+            <div class="portrait-crop" id="portrait-crop" aria-label="Kéo để căn vị trí ảnh">
+              <img id="portrait-editor-image" src="images/unnamed.png" alt="Ảnh người nhận đang chọn">
+              <span class="portrait-drag-hint">Kéo để căn</span>
+            </div>
+            <div class="portrait-actions">
+              <label class="upload-button" for="portrait-upload">Chọn ảnh</label>
+              <input id="portrait-upload" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+              <button id="portrait-reset" class="quiet-button" type="button">Ảnh mặc định</button>
+              <p class="image-note">PNG, JPG, WebP hoặc GIF · tối đa 8MB</p>
+            </div>
+          </div>
+          <p id="portrait-error" class="field-error" aria-live="polite"></p>
+          <div class="portrait-sliders">
+            <label for="portrait-x">Ngang <output id="portrait-x-output">50</output></label>
+            <input id="portrait-x" type="range" min="0" max="100" value="50">
+            <label for="portrait-y">Dọc <output id="portrait-y-output">50</output></label>
+            <input id="portrait-y" type="range" min="0" max="100" value="50">
+            <label for="portrait-zoom">Phóng ảnh <output id="portrait-zoom-output">1.0×</output></label>
+            <input id="portrait-zoom" type="range" min="1" max="2.5" value="1" step="0.05">
+          </div>
+        </fieldset>
+
         <div class="field-group">
           <div class="field-heading">
             <label for="recipient-name">Tên người nhận</label>

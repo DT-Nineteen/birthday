@@ -1,8 +1,11 @@
 const rawDefaults = {
+  templateId: "pink-celebration",
   recipient: {
     name: "Hi Beo",
     emoji: "🐷",
-    portraitUrl: "images/unnamed.png"
+    portraitUrl: "images/unnamed.png",
+    portraitPosition: { x: 50, y: 50 },
+    portraitScale: 1
   },
   occasion: {
     type: "birthday",
@@ -29,6 +32,8 @@ function deepFreeze(value) {
 
 export const DEFAULT_CARD_CONFIG = deepFreeze(rawDefaults);
 
+const TEMPLATE_IDS = new Set(["pink-celebration", "midnight-disco", "paper-garden"]);
+
 function cleanString(value, fallback) {
   return typeof value === "string" ? value.trim() : fallback;
 }
@@ -39,10 +44,16 @@ export function normalizeCardConfig(value = {}) {
   const letter = value.letter ?? {};
 
   return {
+    templateId: TEMPLATE_IDS.has(value.templateId) ? value.templateId : DEFAULT_CARD_CONFIG.templateId,
     recipient: {
       name: cleanString(recipient.name, DEFAULT_CARD_CONFIG.recipient.name),
       emoji: cleanString(recipient.emoji, DEFAULT_CARD_CONFIG.recipient.emoji),
-      portraitUrl: cleanString(recipient.portraitUrl, DEFAULT_CARD_CONFIG.recipient.portraitUrl)
+      portraitUrl: cleanString(recipient.portraitUrl, DEFAULT_CARD_CONFIG.recipient.portraitUrl),
+      portraitPosition: {
+        x: clampNumber(recipient.portraitPosition?.x, 0, 100, DEFAULT_CARD_CONFIG.recipient.portraitPosition.x),
+        y: clampNumber(recipient.portraitPosition?.y, 0, 100, DEFAULT_CARD_CONFIG.recipient.portraitPosition.y)
+      },
+      portraitScale: clampNumber(recipient.portraitScale, 1, 2.5, DEFAULT_CARD_CONFIG.recipient.portraitScale)
     },
     occasion: {
       type: cleanString(occasion.type, DEFAULT_CARD_CONFIG.occasion.type),
@@ -59,6 +70,11 @@ export function normalizeCardConfig(value = {}) {
     theme: { palette: DEFAULT_CARD_CONFIG.theme.palette },
     motion: { preset: DEFAULT_CARD_CONFIG.motion.preset }
   };
+}
+
+function clampNumber(value, min, max, fallback) {
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.min(max, Math.max(min, number)) : fallback;
 }
 
 export function validateEditableFields(value = {}) {

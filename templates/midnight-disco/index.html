@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Midnight Disco Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="disco-stage">
+    <div class="light light-one"></div><div class="light light-two"></div>
+    <div class="spark-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="disco-sprite disco-ball" aria-hidden="true"></div>
+    <div class="disco-sprite chrome-star star-a" aria-hidden="true"></div>
+    <div class="disco-sprite chrome-star star-b" aria-hidden="true"></div>
+    <section class="poster-copy">
+      <p class="club-line">One night only · <span data-card-field="date-label">07 August</span></p>
+      <h1><span class="birthday-word">Birthday</span><span class="after-word">Afterparty</span></h1>
+      <p class="dedication">Celebrating <strong data-card-field="recipient-name">Hi Beo</strong></p>
+      <button class="ticket-button" type="button" data-letter-open aria-haspopup="dialog">
+        <span data-card-field="cta-label">Click Here Hi Beo</span><b aria-hidden="true">→</b>
+      </button>
+      <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+    <section class="portrait-orbit" aria-label="Chân dung người nhận">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="portrait-disc"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+      <div class="shine"></div>
+      <p data-card-field="recipient-name">Hi Beo</p>
+    </section>
+    <p class="serial">BDAY / 08 / FOREVER YOUNG</p>
+  </main>
+
+  <section class="disco-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <div class="ticket-letter">
+      <aside><p>VIP PASS</p><strong>HAPPY<br>BIRTHDAY</strong><span data-card-field="cover-recipient">To: Hi Beo 🐷</span></aside>
+      <article><p class="admit">ADMIT ONE · MIDNIGHT WISH</p><h2 data-card-field="recipient-name">Hi Beo</h2><p data-card-field="message">Happy birthday...</p></article>
+    </div>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>
