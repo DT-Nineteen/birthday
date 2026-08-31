@@ -37,7 +37,9 @@ function mimeFor(path) {
 
 const sourceFiles = walk(root).filter((path) => {
   const rel = relative(root, path).replaceAll(sep, "/");
-  return (rel.endsWith(".html") && !rel.includes("/")) || rel === "style.css" || rel.startsWith("images/");
+  const isRootPageOrStyle = !rel.includes("/") && (rel.endsWith(".html") || rel.endsWith(".css"));
+  const isBrowserScript = rel.startsWith("scripts/") && rel.endsWith(".js") && rel !== "scripts/build-static-site.mjs";
+  return isRootPageOrStyle || isBrowserScript || rel.startsWith("images/");
 });
 
 const entries = {};

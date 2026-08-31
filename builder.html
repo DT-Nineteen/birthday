@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tạo và xem trước thiệp sinh nhật ngay khi bạn nhập.">
+  <title>Xưởng thiệp sinh nhật</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sriracha&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="builder.css">
+</head>
+<body>
+  <main class="builder-shell">
+    <aside class="editor-panel" aria-label="Chỉnh sửa thiệp">
+      <header class="editor-header">
+        <a class="brand-mark" href="index.html" aria-label="Mở thiệp gốc">
+          <span class="brand-spark" aria-hidden="true">✦</span>
+          <span>Xưởng thiệp</span>
+        </a>
+        <p class="eyebrow">Thiệp sinh nhật · Basic</p>
+        <h1>Một lời chúc,<br>thành một niềm vui.</h1>
+        <p class="intro">Nhập nội dung bên dưới. Tấm thiệp sẽ nhận thay đổi ngay lập tức.</p>
+      </header>
+
+      <form id="card-editor" novalidate>
+        <div class="field-group">
+          <div class="field-heading">
+            <label for="recipient-name">Tên người nhận</label>
+            <span id="recipient-name-count" class="field-count">0/24</span>
+          </div>
+          <input id="recipient-name" name="recipientName" maxlength="24" autocomplete="off"
+            aria-describedby="recipient-name-error">
+          <p id="recipient-name-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field-group">
+          <div class="field-heading">
+            <label for="birthday-date">Ngày sinh</label>
+            <span id="birthday-date-count" class="field-count">0/24</span>
+          </div>
+          <input id="birthday-date" name="birthdayDate" maxlength="24" autocomplete="off"
+            aria-describedby="birthday-date-error">
+          <p id="birthday-date-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field-group field-group--message">
+          <div class="field-heading">
+            <label for="birthday-message">Lời chúc</label>
+            <span id="birthday-message-count" class="field-count">0/500</span>
+          </div>
+          <textarea id="birthday-message" name="message" maxlength="500" rows="7"
+            aria-describedby="birthday-message-error"></textarea>
+          <p id="birthday-message-error" class="field-error" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <footer class="editor-footer">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Xem trước trực tiếp</span>
+        <span class="save-note">Tự lưu: sắp có</span>
+      </footer>
+    </aside>
+
+    <section class="preview-workspace" aria-label="Khu vực xem trước">
+      <header class="preview-toolbar">
+        <div>
+          <p class="preview-kicker">Bản xem trước</p>
+          <p id="preview-size" class="preview-size">1366 × 768</p>
+        </div>
+        <div class="viewport-switcher" role="group" aria-label="Kích thước xem trước">
+          <button class="viewport-button is-active" type="button" data-mode="desktop" aria-pressed="true">
+            <span aria-hidden="true">▭</span> Desktop
+          </button>
+          <button class="viewport-button" type="button" data-mode="mobile" aria-pressed="false">
+            <span aria-hidden="true">▯</span> Mobile
+          </button>
+          <button class="viewport-button" type="button" data-mode="fit" aria-pressed="false">
+            <span aria-hidden="true">↙↗</span> Vừa khung
+          </button>
+        </div>
+      </header>
+
+      <div class="preview-canvas" id="preview-canvas">
+        <div class="preview-frame" id="preview-frame">
+          <iframe id="card-preview" src="index.html" title="Xem trước thiệp sinh nhật"></iframe>
+        </div>
+        <div class="preview-status" id="preview-status" hidden>
+          <p>Chưa thể mở bản xem trước.</p>
+          <button id="retry-preview" type="button">Thử lại</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="desktop-required" aria-labelledby="desktop-required-title">
+      <span aria-hidden="true">↗</span>
+      <h1 id="desktop-required-title">Mở trên màn hình lớn hơn nhé</h1>
+      <p>Phiên bản chỉnh sửa đầu tiên cần màn hình rộng ít nhất 900px. Thiệp dành cho người nhận vẫn hiển thị tốt trên điện thoại.</p>
+      <a href="index.html">Xem thiệp hiện tại</a>
+    </section>
+  </main>
+  <script type="module" src="scripts/builder.js"></script>
+</body>
+</html>

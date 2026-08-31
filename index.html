@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -48,15 +46,15 @@
                         <img src="./images/hat.png" alt="" width="130">
                     </div>
                 </div>
-                <div class="date__of__birth">
-                    <span></span>
+                <div class="date__of__birth" aria-label="Ngày sinh nhật">
+                    <span data-card-field="date-label"></span>
                 </div>
                 <div class="btn">
-                    <button id="btn__letter">
-                        <div class="mail">
-                            Click Here Hi Beo
+                    <button id="btn__letter" type="button" aria-haspopup="dialog" aria-controls="birthday-letter">
+                        <span class="mail">
+                            <span data-card-field="cta-label">Click Here Hi Beo</span>
                             <i class="fa-regular fa-envelope"></i>
-                        </div>
+                        </span>
                     </button>
 
                 </div>
@@ -68,7 +66,7 @@
                     </div>
                     <div class="name">
                         <i class="fa-solid fa-star"></i>
-                        <span>Hi Beo</span>
+                        <span data-card-field="recipient-name">Hi Beo</span>
                         <i class="fa-solid fa-star"></i>
                     </div>
                     <div class="balloon_one">
@@ -122,14 +120,16 @@
         </div>
 
 
-        <div class="boxMail">
-            <i class="fa-solid fa-xmark"></i>
+        <div class="boxMail" id="birthday-letter" role="dialog" aria-modal="true" aria-label="Lời chúc sinh nhật" aria-hidden="true" inert>
+            <button class="letter-close" type="button" aria-label="Đóng lời chúc">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
             <div class="boxMail-container">
                 <div class="card1">
                     <div class="userImg">
                         <img src="images/unnamed.png" alt="">
                     </div>
-                    <h4 class="username">To: Hi Beo 🐷<span class="underline"></span></h4>
+                    <h4 class="username"><span data-card-field="cover-recipient">To: Hi Beo 🐷</span><span class="underline"></span></h4>
 
                     <h3>Happy Birthday</h3>
                     <div class="imageCute">
@@ -139,7 +139,7 @@
                 <div class="card2">
                     <div class="card2-content">
                         <h3>To You!</h3>
-                        <h2>Happy birthday 🐷 Chúc tuổi mới bảo giảm cân là giảm được ngay, nghĩ được nhiều lí do để nghỉ làm và hủy kèo, ít rủ bạn đi chơi để bạn đỡ phải nghĩ lí do sủi. Gặp nhiều may mắn 🍀 sức khỏe dồi dào 🐖 công việc thuận lợi 💸 sớm sinh quí tử 👶
+                        <h2 data-card-field="message">Happy birthday 🐷 Chúc tuổi mới bảo giảm cân là giảm được ngay, nghĩ được nhiều lí do để nghỉ làm và hủy kèo, ít rủ bạn đi chơi để bạn đỡ phải nghĩ lí do sủi. Gặp nhiều may mắn 🍀 sức khỏe dồi dào 🐖 công việc thuận lợi 💸 sớm sinh quí tử 👶
                             🎈🎂🎈 😌
                         </h2>
 
@@ -151,46 +151,7 @@
             </div>
         </div>
     </div>
-
+    <script type="module" src="scripts/card-preview.js"></script>
 </body>
-<script>
-    let datetxt = "07 August";
-    let datatxtletter = "Happy birthday to hibeo";
-    let titleLetter = "To you";
-    let charArrDate = datetxt.split('');
-    let charArrDateLetter = datatxtletter.split('');
-    let charArrTitle = titleLetter.split('');
-    let currentIndex = 0;
-    let currentIndexLetter = 0;
-    let currentIndexTitle = 0;
-    let date__of__birth = document.querySelector(".date__of__birth span");
-    setTimeout(function () {
-        timeDatetxt = setInterval(function () {
-            if (currentIndex < charArrDate.length) {
-                date__of__birth.textContent += charArrDate[currentIndex];
-                currentIndex++;
-            }
-            else {
-                let i = document.createElement("i");
-                i.className = "fa-solid fa-star"
-                document.querySelector(".date__of__birth").prepend(i)
-                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true))
-                clearInterval(timeDatetxt)
-            }
-        }, 100)
-    }, 12000)
-
-    let mailBox = document.querySelector('.mail')
-    let boxmail = document.querySelector('.boxMail')
-    var close = document.querySelector('.fa-xmark')
-    mailBox.onclick = function () {
-        mailBox.classList.toggle('active')
-        boxmail.classList.add('active')
-    }
-
-    close.addEventListener('click', function () {
-        boxmail.classList.remove('active')
-    })
-</script>
 
 </html>

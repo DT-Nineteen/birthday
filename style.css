@@ -109,6 +109,11 @@ body {
 #btn__letter:hover i{
     animation: rotateHeart 1s infinite linear;
 }
+#btn__letter:focus-visible,
+.letter-close:focus-visible{
+    outline: 4px solid var(--color-white);
+    outline-offset: 4px;
+}
 @keyframes rotateHeart{
     0%,50%, 100%{
         transform: rotate(0deg);
@@ -703,7 +708,7 @@ body {
     position: relative;
     background-color: #FF7882;
     transition: all 1s;
-    overflow: hidden;
+    overflow: auto;
     font-family: "Inter", serif;
     color: #fff;
 }
@@ -742,6 +747,9 @@ body {
     text-indent: 20px;
     font-size: 22px;
     opacity: 0;
+    max-height: calc(100% - 92px);
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 .boxMail .boxMail-container .card2:hover h2{
     animation: texth2 2s forwards;
@@ -811,6 +819,30 @@ body {
     cursor: pointer;
     color: white;
     z-index: 10000000000000000;
+}
+
+.letter-close{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 56px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    z-index: 10000000000000000;
+}
+
+.letter-close .fa-xmark{
+    position: static;
+    padding: 0;
+    color: inherit;
+}
+
+body.letter-is-open{
+    overflow: hidden;
 }
 
 .boxMail.active .boxMail-container .card1 {
@@ -901,5 +933,57 @@ body {
         animation: none;
         opacity: 1;
         left: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+
+    .flag__birthday,
+    .title h1 span,
+    .title .hat,
+    .date__of__birth,
+    .left .btn,
+    .right .box__account,
+    .cricle,
+    .decorate_star,
+    .decorate_flower--one,
+    .decorate_flower--two,
+    .decorate_flower--three,
+    .smiley__icon {
+        animation: none !important;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .flag__birthday { transform: translateY(-10px); }
+    .title h1 span { transform: translateY(0); }
+    .title .hat { top: -30px; transform: rotate(0); }
+    .date__of__birth { width: 300px; height: 50px; transform: translateY(0); }
+    .left .btn,
+    .cricle,
+    .decorate_star,
+    .decorate_flower--one,
+    .decorate_flower--two,
+    .decorate_flower--three,
+    .smiley__icon { transform: scale(1); }
+    .right .box__account { transform: translateY(0); }
+    .text__cricle,
+    .name .fa-star,
+    .cricle .fa-cake-candles,
+    .right .balloon_one,
+    .right .balloon_two {
+        animation: none !important;
+    }
+
+    .boxMail,
+    .boxMail .boxMail-container,
+    .boxMail .boxMail-container .card1,
+    .boxMail .boxMail-container .card2-content {
+        transition-duration: .15s !important;
     }
 }

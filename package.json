@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-static-site.mjs"
+    "build": "node scripts/build-static-site.mjs",
+    "test": "node --test"
   }
 }
