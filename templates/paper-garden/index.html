@@ -2,28 +2,33 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Paper Garden Birthday</title>
+  <title>Paper Garden · Birthday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="garden-stage">
-    <div class="paper-shadow paper-one"></div><div class="paper-shadow paper-two"></div>
-    <div class="garden-sprite marigold" aria-hidden="true"></div><div class="garden-sprite peony" aria-hidden="true"></div><div class="garden-sprite eucalyptus" aria-hidden="true"></div><div class="garden-sprite butterfly" aria-hidden="true"></div>
-    <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-    <section class="garden-copy">
-      <p class="postmark">A little garden for</p>
-      <h1>Happy<br><em>Birthday</em></h1>
-      <div class="stitched-date"><span data-card-field="date-label">07 August</span></div>
+  <main class="garden-stage" data-motion-stage>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="folio folio-top" aria-hidden="true"><span>Birthday herbarium</span><span>№ 08</span></div>
+    <div class="folio folio-side" aria-hidden="true">A private garden, pressed in time</div>
+    <section class="garden-copy" aria-labelledby="garden-title">
+      <p class="edition-label"><span></span> A little garden for</p>
+      <h1 id="garden-title"><span class="title-happy">Happy</span><span class="title-birthday">Birthday</span></h1>
+      <div class="date-row"><span class="date-rule"></span><p data-card-field="date-label">07 August</p></div>
       <p class="garden-name">Dear <strong data-card-field="recipient-name">Hi Beo</strong>,</p>
-      <button class="note-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Click Here Hi Beo</span><b aria-hidden="true">✿</b></button>
+      <button class="note-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Open your note Hi Beo</span><i aria-hidden="true">↗</i></button>
     </section>
-    <section class="botanical-frame" aria-label="Chân dung người nhận">
-      <div class="tape tape-top"></div><div class="tape tape-bottom"></div>
-      <div class="portrait-paper"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
-      <p data-card-field="recipient-name">Hi Beo</p>
+    <section class="portrait-composition" aria-label="Chân dung người nhận">
+      <div class="archive-sheet" aria-hidden="true"><span>FIELD NOTE</span><b>07</b><i></i></div>
+      <figure class="botanical-frame">
+        <div class="portrait-paper"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+        <figcaption><span>With love,</span><strong data-card-field="recipient-name">Hi Beo</strong></figcaption>
+      </figure>
+      <img class="botanical-cluster" src="../../images/templates/paper-garden/botanical-cluster.png" alt="" aria-hidden="true">
+      <div class="specimen-tag" aria-hidden="true"><span>garden memory</span><b>one of one</b></div>
     </section>
+    <div class="drifting-petals" aria-hidden="true"><i></i><i></i><i></i></div>
     <p class="made-note">pressed with love · birthday edition</p>
   </main>
   <section class="garden-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>

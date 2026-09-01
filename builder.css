@@ -217,6 +217,9 @@ input:focus-visible, textarea:focus-visible {
 }
 
 .preview-toolbar .preview-kicker { margin: 0 0 2px; color: var(--muted); }
+.preview-actions { display: flex; align-items: center; gap: 10px; }
+.replay-button { padding: 10px 13px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 11px; cursor: pointer; font: 600 .72rem "Poppins", sans-serif; }
+.replay-button:hover, .replay-button:focus-visible { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255,120,130,.16); outline: none; }
 .preview-size { margin: 0; font-size: .72rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 
 .viewport-switcher {

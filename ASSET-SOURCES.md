@@ -8,6 +8,9 @@ This repository records provenance so templates can be reviewed before commercia
 |---|---|---|---|
 | `images/templates/midnight-disco/disco-sticker-sheet.png` | Midnight Disco | Generated for this project with the built-in OpenAI image generation tool on 2026-08-31; project-owned output, no external attribution embedded | Transparent editorial 3D sticker sheet containing disco ball, chrome star, comet, microphone, party horn, crescent moon, dancing shoe, and confetti in midnight/ultraviolet/coral/cyan chrome palette |
 | `images/templates/paper-garden/garden-sticker-sheet.png` | Paper Garden | Generated for this project with the built-in OpenAI image generation tool on 2026-08-31; project-owned output, no external attribution embedded | Transparent cut-paper and pressed-botanical sticker sheet containing marigold, peony, eucalyptus, daisy, butterfly, ribbon, wax seal, and petals |
+| `images/templates/paper-garden/botanical-cluster.png` | Paper Garden Editorial Botanical | Generated for this project with the built-in OpenAI image generation tool on 2026-08-31; project-owned output, no external attribution embedded | One complete transparent pressed-flower herbarium cluster with coral ranunculus, saffron cosmos, baby's-breath and slender leaves; composed as a self-contained website cutout |
+
+The original Paper Garden sticker sheet is retained as an exploration artifact but is no longer referenced by the template because its irregular layout cannot be safely consumed as a sprite atlas.
 
 ## Existing repository assets
 

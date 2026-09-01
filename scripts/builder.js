@@ -17,6 +17,7 @@ const iframe = document.querySelector("#card-preview");
 const sizeLabel = document.querySelector("#preview-size");
 const status = document.querySelector("#preview-status");
 const retryButton = document.querySelector("#retry-preview");
+const replayButton = document.querySelector("#replay-preview");
 const modeButtons = [...document.querySelectorAll("[data-mode]")];
 const portraitUpload = document.querySelector("#portrait-upload");
 const portraitReset = document.querySelector("#portrait-reset");
@@ -218,6 +219,9 @@ retryButton.addEventListener("click", () => {
   status.hidden = true;
   iframe.src = `${getTemplate(state.templateId).route}?retry=${Date.now()}`;
   watchPreviewLoad();
+});
+replayButton.addEventListener("click", () => {
+  if (iframeReady) iframe.contentWindow.postMessage({ type: "birthday-card:replay" }, window.location.origin);
 });
 
 renderTemplatePicker();
