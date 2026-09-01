@@ -23,7 +23,7 @@ Paper Garden is a premium-feeling free birthday template. Its job is to make one
 | Coral | #b95846 |
 | Saffron | #d2a13d |
 
-Typography uses Fraunces for display, Kalam for personalization and DM Sans for editorial utility labels.
+Typography uses Fraunces with its real italic face for display, Sriracha for Vietnamese personalization and DM Sans for editorial utility labels.
 
 ## Composition rules
 
@@ -32,6 +32,7 @@ Typography uses Fraunces for display, Kalam for personalization and DM Sans for 
 - Decorations may overlap the card but must remain fully contained by their own transparent image bounds.
 - Keep at most one hero botanical cluster. Small labels and rules must encode archive/specimen meaning.
 - Do not use arbitrary sticker sheets, icon grids, generic gradients or evenly scattered decoration.
+- Do not hard-code edition numbers or personal claims that users cannot configure. Editorial microcopy must remain meaningful and reusable.
 
 ## Quality bar
 

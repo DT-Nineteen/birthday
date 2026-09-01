@@ -15,13 +15,13 @@ The animation is a 16-second editorial reveal, not a collection of entrance effe
 | 6.0–10.8s | Portrait develops from soft, muted blur to final treatment. |
 | 8.5–11.2s | Pressed botanical cluster is placed over the photograph. |
 | 10.4–13.8s | Specimen tag, salutation, CTA and edition note resolve. |
-| 7.0–16.0s | Three petals make one non-repeating pass. |
+| 7.0s onward | Five petals drift in staggered 18–24 second loops as quiet ambient motion. |
 
 ## Rules
 
 - Use cubic-bezier(.16,1,.3,1) for physical placement.
 - Do not animate a light band across the portrait or face.
-- Do not use infinite loops in the hero sequence.
+- Do not use infinite loops in the hero sequence. Ambient petals may loop because they begin after the narrative reveal and never obscure content.
 - Editing content updates immediately without replaying the timeline.
 - The birthday-card:replay message restarts the sequence.
 - Under reduced motion, all content is immediately visible and petals are removed.
