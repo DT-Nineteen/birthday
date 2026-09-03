@@ -35,6 +35,14 @@ let logicalMode = "desktop";
 let loadFailureTimer;
 let uploadedObjectUrl = null;
 let dragStart = null;
+let previewRevision = 0;
+
+function buildPreviewUrl(templateId) {
+  const route = getTemplate(templateId).route;
+  const separator = route.includes("?") ? "&" : "?";
+  previewRevision += 1;
+  return `${route}${separator}preview=${Date.now()}-${previewRevision}`;
+}
 
 function renderTemplatePicker() {
   templateList.replaceChildren(...TEMPLATES.map((template) => {
@@ -98,11 +106,12 @@ function updateAll() {
 
 function selectTemplate(id) {
   const template = getTemplate(id);
-  if (template.id === state.templateId) return;
-  state = normalizeCardConfig({ ...state, templateId: template.id });
+  if (template.id !== state.templateId) {
+    state = normalizeCardConfig({ ...state, templateId: template.id });
+  }
   iframeReady = false;
   status.hidden = true;
-  iframe.src = template.route;
+  iframe.src = buildPreviewUrl(template.id);
   renderTemplatePicker();
   watchPreviewLoad();
 }
@@ -217,7 +226,7 @@ iframe.addEventListener("load", watchPreviewLoad);
 retryButton.addEventListener("click", () => {
   iframeReady = false;
   status.hidden = true;
-  iframe.src = `${getTemplate(state.templateId).route}?retry=${Date.now()}`;
+  iframe.src = buildPreviewUrl(state.templateId);
   watchPreviewLoad();
 });
 replayButton.addEventListener("click", () => {
@@ -228,4 +237,5 @@ renderTemplatePicker();
 renderPortraitControls();
 renderValidation();
 renderViewport();
+iframe.src = buildPreviewUrl(state.templateId);
 watchPreviewLoad();

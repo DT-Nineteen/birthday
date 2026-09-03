@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Soft Film · Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Caveat:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="film-stage" data-motion-stage>
+    <div class="film-grain" aria-hidden="true"></div><div class="light-leak" aria-hidden="true"></div>
+    <header class="tape-header"><span><i></i> REC</span><b data-card-field="date-label">07 August</b><em>SP · TAPE</em></header>
+    <section class="film-copy" aria-labelledby="film-title">
+      <p class="take-label">A birthday home movie</p>
+      <h1 id="film-title"><span>Happy</span><strong>Birthday</strong></h1>
+      <p class="film-name">starring <b data-card-field="recipient-name">Hi Beo</b></p>
+      <button class="film-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Open your note Hi Beo</span><i aria-hidden="true">▶</i></button>
+      <p class="hand-note">one ordinary day,<br>kept forever.</p>
+    </section>
+    <section class="viewfinder" aria-label="Đoạn phim chân dung người nhận">
+      <div class="screen">
+        <img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait>
+        <div class="tracking" aria-hidden="true"></div><div class="focus-corners" aria-hidden="true"></div>
+        <span class="screen-date" data-card-field="date-label">07 August</span><span class="counter">00:00:08</span>
+      </div>
+      <div class="transport" aria-hidden="true"><span>◀◀</span><b>▶</b><span>▮▮</span><span>■</span><i></i><small>HOME VIDEO</small></div>
+    </section>
+    <div class="tape-mark tape-mark-one" aria-hidden="true">PLAY</div><div class="tape-mark tape-mark-two" aria-hidden="true">CH 03</div>
+    <footer><span>MEMORY IN PROGRESS</span><b>FOR YOU · <span data-card-field="recipient-name">HI BEO</span></b></footer>
+  </main>
+  <section class="film-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <article class="cassette-note">
+      <div class="cassette-face"><span>SIDE A</span><h2 data-card-field="cover-recipient">To: Hi Beo 🐷</h2><div class="reels"><i></i><i></i></div><p>birthday tape · play once, remember always</p></div>
+      <div class="letter-message"><p data-card-field="date-label">07 August</p><h2 data-card-field="recipient-name">Hi Beo</h2><div data-card-field="message">Happy birthday...</div></div>
+    </article>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

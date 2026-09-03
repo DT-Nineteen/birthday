@@ -97,7 +97,7 @@ button, input, textarea { font: inherit; }
 fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
 legend { margin-bottom: 8px; font-size: .76rem; font-weight: 600; }
 
-.template-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.template-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
 
 .template-card {
   position: relative;
@@ -129,6 +129,8 @@ legend { margin-bottom: 8px; font-size: .76rem; font-weight: 600; }
 .template-card[data-template="pink-celebration"] { --template-preview: repeating-linear-gradient(0deg, transparent 0 14px, rgba(255,255,255,.8) 14px 16px), #feecea; }
 .template-card[data-template="midnight-disco"] { --template-preview: radial-gradient(circle at 70% 30%, #56e7ff 0 6px, transparent 7px), linear-gradient(135deg, #120d2e 25%, #7d5cff 55%, #ff5d86); }
 .template-card[data-template="paper-garden"] { --template-preview: radial-gradient(circle at 25% 35%, #e4a92f 0 8px, transparent 9px), radial-gradient(circle at 70% 65%, #c87973 0 10px, transparent 11px), #f6eedf; }
+.template-card[data-template="soft-film"] { --template-preview: linear-gradient(90deg, transparent 8%, rgba(25,23,20,.85) 8% 11%, transparent 11% 89%, rgba(25,23,20,.85) 89% 92%, transparent 92%), radial-gradient(circle at 72% 32%, rgba(217,107,59,.82), transparent 28%), #f3e4c8; }
+.template-card[data-template="sticker-book"] { --template-preview: radial-gradient(circle at 22% 30%, #ffca43 0 7px, #fff 8px 10px, transparent 11px), radial-gradient(circle at 76% 65%, #ff6385 0 9px, #fff 10px 12px, transparent 13px), linear-gradient(135deg, #eaf9ff 0 52%, #fff8d9 52%); }
 
 .portrait-row { display: grid; grid-template-columns: 78px 1fr; gap: 12px; align-items: center; }
 .portrait-crop { position: relative; width: 78px; height: 78px; overflow: hidden; background: #eadfd4; border: 2px solid var(--ink); border-radius: 50%; cursor: grab; touch-action: none; }

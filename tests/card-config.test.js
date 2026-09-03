@@ -53,8 +53,30 @@ test("normalizes template and portrait transform values", () => {
 });
 
 test("template registry has unique ids and safe fallback", () => {
-  assert.equal(new Set(TEMPLATES.map(({ id }) => id)).size, 3);
+  assert.equal(new Set(TEMPLATES.map(({ id }) => id)).size, 5);
   assert.equal(getTemplate("missing").id, "pink-celebration");
+});
+
+test("paper garden protects display type, portrait caption, and ambient motion", async () => {
+  const html = await readFile(new URL("../templates/paper-garden/index.html", import.meta.url), "utf8");
+  const css = await readFile(new URL("../templates/paper-garden/style.css", import.meta.url), "utf8");
+  const leafMarkup = html.match(/<div class="drifting-petals"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? "";
+  const leafCount = (leafMarkup.match(/<i><\/i>/g) ?? []).length;
+
+  assert.equal(leafCount, 12);
+  assert.match(css, /\.garden-copy h1\{width:max-content;max-width:none;overflow:visible\}/);
+  assert.match(css, /\.botanical-frame figcaption\{z-index:6;right:24%;gap:12px\}/);
+  assert.match(css, /paper-garden-leaf-fall var\(--duration\) var\(--delay\) linear infinite/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\).*\.drifting-petals\{display:none\}/);
+});
+
+test("sticker book resets portrait motion and keeps mobile stickers out of copy", async () => {
+  const css = await readFile(new URL("../templates/sticker-book/style.css", import.meta.url), "utf8");
+
+  assert.match(css, /@keyframes photo-stick-mobile\{[^}]*transform:translateY\(-42px\)[\s\S]*?translate3d\(0,0,0\)/);
+  assert.match(css, /@media\(max-width:658px\)\{\s*\.is-playing \.photo-booth\{animation-name:photo-stick-mobile\}/);
+  assert.match(css, /\.sticker-gift\{left:2%;top:44%;bottom:auto;width:13%\}/);
+  assert.match(css, /\.sticker-cake\{right:2%;top:43%;bottom:auto;width:14%\}/);
 });
 
 test("production build contains builder routes and browser scripts", async () => {
@@ -68,4 +90,6 @@ test("production build contains builder routes and browser scripts", async () =>
   assert.match(worker, /"\/scripts\/card-preview\.js"/);
   assert.match(worker, /"\/templates\/midnight-disco\/index\.html"/);
   assert.match(worker, /"\/templates\/paper-garden\/index\.html"/);
+  assert.match(worker, /"\/templates\/soft-film\/index\.html"/);
+  assert.match(worker, /"\/templates\/sticker-book\/index\.html"/);
 });

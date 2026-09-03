@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Birthday Sticker Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sticker-stage" data-motion-stage>
+    <div class="paper-grid" aria-hidden="true"></div>
+    <header class="book-header"><span>BIRTHDAY STICKER BOOK</span><b data-card-field="date-label">07 August</b><i>made for one</i></header>
+
+    <section class="book-copy" aria-labelledby="sticker-title">
+      <p class="eyebrow"><span>✦</span> a tiny party for</p>
+      <h1 id="sticker-title"><span>Happy</span><strong>Birthday!</strong></h1>
+      <p class="recipient-line">hey, <b data-card-field="recipient-name">Hi Beo</b></p>
+      <button class="note-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Open your note Hi Beo</span><i>↗</i></button>
+      <p class="scribble">today looks good on you!</p>
+    </section>
+
+    <section class="photo-booth" aria-label="Ảnh photobooth người nhận">
+      <div class="tape tape-a" aria-hidden="true"></div><div class="tape tape-b" aria-hidden="true"></div>
+      <figure>
+        <div class="photo-window"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+        <figcaption><span>FOR YOU</span><strong data-card-field="recipient-name">Hi Beo</strong><b>♥</b></figcaption>
+      </figure>
+    </section>
+
+    <div class="sticker sticker-balloon" aria-hidden="true"><svg viewBox="0 0 120 150"><path d="M60 8C28 8 12 31 17 59c4 25 22 42 43 49 21-7 39-24 43-49C108 31 92 8 60 8Z" fill="#84d9f4" stroke="#fff" stroke-width="12"/><path d="m60 108-8 13h16Z" fill="#84d9f4" stroke="#fff" stroke-width="7"/><path d="M60 121c-12 10 11 16-3 27" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M41 31c7-7 16-9 23-8" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".75"/></svg></div>
+    <div class="sticker sticker-cake" aria-hidden="true"><svg viewBox="0 0 150 135"><path d="M25 65h100v55H25Z" fill="#ff91ae" stroke="#fff" stroke-width="12"/><path d="M18 65c10-18 22 10 34-3 10-12 19 11 31 0 12-12 23 9 32 0 8-8 14-5 18 3" fill="#fff4a8" stroke="#fff" stroke-width="12" stroke-linejoin="round"/><path d="M44 65V34m31 30V28m31 37V36" stroke="#fff" stroke-width="11"/><path d="M44 31c-12-11 3-22 3-22s11 13-3 22Zm31-6c-12-11 3-22 3-22s11 13-3 22Zm31 8c-12-11 3-22 3-22s11 13-3 22Z" fill="#ffca43" stroke="#fff" stroke-width="6"/></svg></div>
+    <div class="sticker sticker-gift" aria-hidden="true"><svg viewBox="0 0 130 130"><path d="M15 50h100v66H15Z" fill="#8c7cf0" stroke="#fff" stroke-width="12"/><path d="M65 50v66M10 50h110V32H10Z" fill="#ffca43" stroke="#fff" stroke-width="12"/><path d="M65 32C46 30 34 17 42 10c9-8 23 8 23 22Zm0 0c19-2 31-15 23-22-9-8-23 8-23 22Z" fill="#ff6385" stroke="#fff" stroke-width="9"/></svg></div>
+    <div class="sticker sticker-bow" aria-hidden="true"><svg viewBox="0 0 150 100"><path d="M72 48C47 12 12 11 13 33c1 18 27 30 59 20Zm6 0c25-36 60-37 59-15-1 18-27 30-59 20Z" fill="#ff6385" stroke="#fff" stroke-width="12"/><path d="M58 40h34v28H58Z" fill="#ffca43" stroke="#fff" stroke-width="10"/></svg></div>
+    <div class="sticker sticker-stars" aria-hidden="true"><svg viewBox="0 0 150 110"><path d="m45 5 10 25 26 10-26 10-10 25-10-25L9 40l26-10Z" fill="#ffca43" stroke="#fff" stroke-width="8"/><path d="m112 38 7 17 18 7-18 7-7 18-7-18-18-7 18-7Z" fill="#84d9f4" stroke="#fff" stroke-width="8"/></svg></div>
+    <div class="confetti" aria-hidden="true">✦ <b>●</b> <i>◆</i> <span>✦</span> <em>●</em></div>
+    <footer><span>stick it · keep it · remember it</span><b>FOR YOU · <span data-card-field="recipient-name">HI BEO</span></b></footer>
+  </main>
+
+  <section class="sticker-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <article class="note-sheet">
+      <div class="note-cover"><span>special delivery</span><strong data-card-field="cover-recipient">To: Hi Beo</strong><i>♥</i></div>
+      <div class="note-message"><p data-card-field="date-label">07 August</p><h2 data-card-field="recipient-name">Hi Beo</h2><div data-card-field="message">Happy birthday...</div></div>
+    </article>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

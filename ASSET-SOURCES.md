@@ -20,6 +20,10 @@ The Pink Celebration template continues to use the image and GIF files that exis
 
 Grid lines, spotlights, equalizer bars, orbit lines, confetti dots, paper texture, stitched borders, tape rectangles, and falling petal geometry are CSS-generated non-representational interface decoration and do not depend on third-party artwork.
 
+Soft Film uses only the user-selected portrait plus CSS-generated grain, light leak, scan lines, tracking line, viewfinder marks, cassette reels and transport controls. It introduces no external raster asset.
+
+Birthday Sticker Book uses project-authored inline SVG artwork for its balloon, cake, gift, bow and sparkle stickers, plus CSS-generated paper grid, tape and confetti. It introduces no external raster asset.
+
 ## Fonts and icons
 
 - Google Fonts are loaded from Google Fonts CSS: Archivo Black, Shrikhand, DM Mono, Fraunces, Kalam, DM Sans, Titan One, Sriracha, Dancing Script, and Poppins. Verify the individual SIL Open Font License files when vendoring fonts for production.

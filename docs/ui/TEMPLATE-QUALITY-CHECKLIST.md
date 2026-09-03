@@ -19,6 +19,8 @@
 ## Responsive and technical
 
 - [ ] Review at 390×844, 768×1024, 1366×768 and 1440×900.
+- [ ] At every breakpoint, animated elements reset inherited transforms and their final bounding boxes stay inside the stage.
+- [ ] Check the settled animation frame, not only the first paint, for clipping and overlap.
 - [ ] No missing assets, console errors or CSS leakage.
 - [ ] Production build contains every template route.
 - [ ] Asset origin and license status are documented.

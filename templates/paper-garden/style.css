@@ -18,3 +18,37 @@
 .garden-letter{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:rgba(38,32,28,.76);opacity:0;visibility:hidden;transition:.4s}.garden-letter.is-open{opacity:1;visibility:visible}.letter-close{position:absolute;right:24px;top:16px;color:white;background:transparent;border:0;cursor:pointer;font-size:2.6rem}.folding-note{display:grid;grid-template-columns:40% 60%;width:min(880px,92vw);min-height:470px;filter:drop-shadow(0 24px 34px rgba(20,16,14,.3));transform:translateY(20px) scale(.94);transition:.6s var(--ease-out)}.is-open .folding-note{transform:none}.note-cover{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:35px;color:var(--paper);background:var(--sage)}.note-cover span{font:1.4rem "Sriracha",cursive}.note-cover strong{margin:30px 0;padding:12px;border-block:1px solid currentColor;text-align:center}.note-cover i{display:grid;place-items:center;width:56px;height:56px;background:var(--coral);border-radius:50%;font-style:normal}.note-message{padding:46px 48px;background-color:var(--paper);background-image:linear-gradient(rgba(105,114,98,.12) 1px,transparent 1px);background-size:100% 31px;overflow:auto}.note-date{color:var(--sage);font:400 .8rem "Sriracha",cursive}.note-message h2{margin:16px 0;color:var(--coral);font:600 clamp(2.4rem,5vw,4.6rem) "Fraunces",serif}.note-message>p:last-child{font:1.05rem/1.72 "Sriracha",cursive}
 @media(max-width:658px){.garden-stage{background:linear-gradient(165deg,#f7f3e9 0 58%,#eee7d8 58%)}.folio-top{top:3.4%;left:6%;right:6%}.folio-side{display:none}.garden-copy{left:8%;top:9%;width:84%;transform:none}.edition-label{margin-bottom:.6rem}.garden-copy h1{font-size:clamp(3.7rem,18vw,5.1rem)}.title-birthday{margin-left:6%}.date-row{margin:1.4rem 0 .7rem}.garden-name{margin-bottom:.7rem}.note-button{padding:9px 10px 9px 14px}.portrait-composition{right:9%;top:auto;bottom:4.5%;width:78vw;transform:none}.botanical-frame figcaption strong{max-width:42%;margin-right:23%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:1.45rem}.botanical-cluster{right:-8%;bottom:-4%;width:45%}.specimen-tag{bottom:12%;left:-3%}.made-note{display:none}.folding-note{grid-template-columns:1fr;width:88vw;max-height:82vh;overflow:auto}.note-cover{min-height:165px}.note-cover strong{margin:12px}.note-message{padding:28px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.edition-label span{width:44px}.title-birthday::after{transform:scaleX(1) rotate(-1deg)}.date-rule{width:62px}.drifting-petals{display:none}}
+
+/* Layout safety: preserve display-face swashes and reserve a clear caption zone. */
+.garden-copy h1{width:max-content;max-width:none;overflow:visible}
+.title-happy,.title-birthday{overflow:visible;white-space:nowrap;padding:.12em .24em .2em;margin-block:-.12em -.2em;margin-right:-.24em}
+.title-birthday::after{right:12%;bottom:7%}
+.botanical-frame figcaption{z-index:6;right:24%;gap:12px}
+.botanical-frame figcaption span{flex:0 0 auto}
+.botanical-frame figcaption strong{position:relative;z-index:1;max-width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.botanical-cluster{right:-13%;bottom:-17%;width:40%}
+
+/* Ambient leaves begin at staggered points in their cycle, so motion is present immediately. */
+.drifting-petals{position:absolute;inset:0;z-index:7;overflow:hidden;pointer-events:none}
+.drifting-petals i{--duration:20s;--delay:-4s;--drift:7vw;--sway:-3vw;position:absolute;left:50%;top:-8%;width:14px;height:9px;background:var(--sage);border-radius:100% 8% 100% 8%;opacity:0;filter:drop-shadow(0 2px 2px rgba(48,42,38,.12));transform-origin:80% 20%}
+.drifting-petals i:nth-child(1){left:6%;--duration:19s;--delay:-3s;--drift:10vw;--sway:3vw}
+.drifting-petals i:nth-child(2){left:16%;width:10px;height:7px;background:var(--saffron);--duration:23s;--delay:-17s;--drift:-5vw;--sway:5vw}
+.drifting-petals i:nth-child(3){left:28%;width:16px;height:10px;background:var(--rose);--duration:21s;--delay:-9s;--drift:8vw;--sway:-4vw}
+.drifting-petals i:nth-child(4){left:39%;width:11px;height:8px;background:var(--coral);--duration:25s;--delay:-21s;--drift:-7vw;--sway:2vw}
+.drifting-petals i:nth-child(5){left:49%;width:13px;height:8px;background:var(--saffron);--duration:18s;--delay:-13s;--drift:6vw;--sway:-5vw}
+.drifting-petals i:nth-child(6){left:58%;width:17px;height:10px;--duration:26s;--delay:-6s;--drift:-6vw;--sway:4vw}
+.drifting-petals i:nth-child(7){left:67%;width:9px;height:6px;background:var(--rose);--duration:20s;--delay:-19s;--drift:9vw;--sway:-3vw}
+.drifting-petals i:nth-child(8){left:76%;width:15px;height:9px;background:var(--coral);--duration:24s;--delay:-11s;--drift:-8vw;--sway:3vw}
+.drifting-petals i:nth-child(9){left:86%;width:11px;height:7px;background:var(--saffron);--duration:22s;--delay:-2s;--drift:5vw;--sway:-4vw}
+.drifting-petals i:nth-child(10){left:94%;width:16px;height:10px;--duration:27s;--delay:-23s;--drift:-10vw;--sway:2vw}
+.drifting-petals i:nth-child(11){left:34%;width:9px;height:6px;background:var(--rose);--duration:17s;--delay:-15s;--drift:4vw;--sway:5vw}
+.drifting-petals i:nth-child(12){left:72%;width:13px;height:8px;--duration:23s;--delay:-8s;--drift:-4vw;--sway:-5vw}
+.is-playing .drifting-petals i{animation:paper-garden-leaf-fall var(--duration) var(--delay) linear infinite}
+@keyframes paper-garden-leaf-fall{0%{opacity:0;transform:translate3d(0,-10vh,0) rotate(0)}8%{opacity:.72}45%{opacity:.62;transform:translate3d(var(--sway),48vh,0) rotate(210deg)}88%{opacity:.5}100%{opacity:0;transform:translate3d(var(--drift),110vh,0) rotate(480deg)}}
+@keyframes title-rise{from{opacity:0;transform:translateY(38px);clip-path:inset(100% -28% -22% -20%)}to{opacity:1;transform:none;clip-path:inset(-22% -28% -22% -20%)}}
+
+@media(max-width:658px){.botanical-frame figcaption{right:18%;gap:8px}.botanical-frame figcaption strong{max-width:58%;margin-right:0;font-size:1.45rem}.botanical-cluster{right:-14%;bottom:-9%;width:38%}}
+
+/* Keep the editorial two-line lockup tight without letting letterforms collide. */
+.garden-copy h1{line-height:.96}
+.title-happy,.title-birthday{margin-block:.005em;padding-bottom:.14em}
