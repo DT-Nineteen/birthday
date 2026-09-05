@@ -1,3 +1,5 @@
+import { TEMPLATES } from "./template-registry.js";
+
 const rawDefaults = {
   templateId: "pink-celebration",
   recipient: {
@@ -32,7 +34,7 @@ function deepFreeze(value) {
 
 export const DEFAULT_CARD_CONFIG = deepFreeze(rawDefaults);
 
-const TEMPLATE_IDS = new Set(["pink-celebration", "midnight-disco", "paper-garden"]);
+const TEMPLATE_IDS = new Set(TEMPLATES.map(({ id }) => id));
 
 function cleanString(value, fallback) {
   return typeof value === "string" ? value.trim() : fallback;

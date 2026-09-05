@@ -72,6 +72,8 @@ Builder gửi toàn bộ config sang iframe sau mỗi thay đổi. Template ph�
 3. `paper-garden`: đã nâng cấp thành botanical editorial; chữ, caption, hoa và lá rơi đã được sửa. Lá/petal ambient chạy infinite, reduced-motion sẽ tắt.
 4. `soft-film`: Home Movie 90s, màu phim ấm và hoài niệm; đã sửa khoảng cách hai dòng Happy Birthday và transform mobile.
 5. `sticker-book`: kết quả được đánh giá rất tốt và gần base. Có photobooth, sticker inline SVG do dự án tự tạo, staged motion. Mobile đã sửa portrait bị đẩy/cắt và gift/cake/stars che nội dung.
+6. `doodle-party`: cùng design family với base; notebook, marker và doodle vẽ tay. Portrait có marker frame chạy nét liên tục; mobile dùng safety band riêng và ẩn tape có thể che tên.
+7. `birthday-post-office`: bưu thiếp editorial sáng với portrait thành tem kỷ niệm one-of-one, đường chuyển thư và phong bì mở thành lời chúc. Mobile đưa tem chân dung lên trên, có route và safety band riêng; decoration dùng CSS/inline SVG do dự án tự tạo.
 
 ## 6. Những lỗi đã gặp — không được lặp lại
 
@@ -111,7 +113,7 @@ Dev server chuẩn là `python scripts/dev-server.py`, có header no-cache. Nế
 
 ## 8. Roadmap gần nhất
 
-Template tiếp theo đã được đề xuất nhưng chưa triển khai: **Doodle Party**.
+**Birthday Post Office đã được triển khai** thành template thứ 7 và đang chờ người dùng duyệt trực tiếp trong builder.
 
 Định hướng đã trao đổi:
 
@@ -122,9 +124,7 @@ Template tiếp theo đã được đề xuất nhưng chưa triển khai: **Doo
 - tránh biến thành bảng trắng trẻ em hoặc rải icon ngẫu nhiên;
 - mobile phải có keyframe và vùng đặt decoration riêng ngay từ đầu.
 
-Các concept dự phòng: Candy Arcade, Balloon Parade, Birthday Comic và Sweet Bakery.
-
-Trước khi triển khai Doodle Party trên task mới, cần xác nhận lại concept với người dùng rồi làm một template hoàn chỉnh để duyệt, không tạo nhiều bản nửa vời cùng lúc.
+Sau khi duyệt Birthday Post Office, tiếp tục chọn một concept rồi làm một template hoàn chỉnh; không tạo nhiều bản nửa vời cùng lúc. Các concept dự phòng hiện là Candy Arcade, Balloon Parade, Birthday Comic, Sweet Bakery, Riso Birthday Press và Birthday Patchwork.
 
 ## 9. Git và chuyển máy
 

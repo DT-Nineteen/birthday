@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Birthday Post Office</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@600;700;800&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="mail-stage" data-motion-stage>
+    <div class="paper-lines" aria-hidden="true"></div>
+    <div class="airmail-edge" aria-hidden="true"></div>
+    <header class="mail-header">
+      <span>BIRTHDAY POST OFFICE</span>
+      <b>PRIORITY: JOY</b>
+      <i data-card-field="date-label">07 August</i>
+    </header>
+
+    <section class="mail-copy" aria-labelledby="mail-title">
+      <p class="routing-label"><span>✦</span> SPECIAL DELIVERY FOR</p>
+      <h1 id="mail-title"><span>Happy</span><strong>Birthday!</strong></h1>
+      <div class="address-label">
+        <small>DELIVER TO</small>
+        <b data-card-field="recipient-name">Hi Beo</b>
+        <i>with all the good wishes</i>
+      </div>
+      <button class="envelope-button" type="button" data-letter-open aria-haspopup="dialog">
+        <span class="envelope-icon" aria-hidden="true">✉</span>
+        <span data-card-field="cta-label">Open your letter Hi Beo</span>
+        <i aria-hidden="true">→</i>
+      </button>
+    </section>
+
+    <section class="portrait-stamp" aria-label="Tem chân dung người nhận">
+      <div class="stamp-shadow" aria-hidden="true"></div>
+      <figure>
+        <div class="stamp-value"><span>HAPPY</span><b>♥</b></div>
+        <div class="portrait-window"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+        <figcaption><small>ONE OF ONE</small><strong data-card-field="recipient-name">Hi Beo</strong></figcaption>
+      </figure>
+      <svg class="postmark" viewBox="0 0 240 190" aria-hidden="true">
+        <circle cx="92" cy="94" r="67"></circle><circle cx="92" cy="94" r="55"></circle>
+        <path d="M45 80c31-23 63-21 96 0M45 107c31-23 63-21 96 0"></path>
+        <text x="92" y="58" text-anchor="middle">SPECIAL</text><text x="92" y="139" text-anchor="middle">DELIVERY</text>
+        <path class="cancel-lines" d="M148 61h83M148 78h83M148 95h83M148 112h83"></path>
+      </svg>
+    </section>
+
+    <svg class="delivery-route" viewBox="0 0 620 240" aria-hidden="true">
+      <path d="M20 188C113 72 197 218 286 109S453 47 599 35"></path>
+      <circle cx="20" cy="188" r="7"></circle><circle cx="599" cy="35" r="7"></circle>
+      <path class="paper-plane" d="m577 25 32 9-25 9-7 19-5-15-14-7Z"></path>
+    </svg>
+
+    <div class="mail-stamp stamp-party" aria-hidden="true"><span>PARTY</span><b>24H</b><i>★</i></div>
+    <div class="mail-stamp stamp-cake" aria-hidden="true"><span>MAKE A WISH</span><b>♨</b></div>
+    <div class="priority-tag" aria-hidden="true">HANDLE WITH<br><strong>HAPPINESS</strong></div>
+    <div class="mobile-mail-band" aria-hidden="true"><span>✦</span> AIR MAIL · MADE FOR ONE · AIR MAIL <i>♥</i></div>
+    <footer><span>FROM: SOMEONE WHO LOVES YOU</span><b>TRACKING: <span data-card-field="recipient-name">HI BEO</span>–BDAY</b></footer>
+  </main>
+
+  <section class="mail-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <article class="envelope-letter">
+      <div class="envelope-back" aria-hidden="true"></div>
+      <div class="letter-sheet">
+        <header><span>SPECIAL DELIVERY</span><b data-card-field="date-label">07 August</b></header>
+        <p>FOR THE WONDERFUL</p>
+        <h2 data-card-field="recipient-name">Hi Beo</h2>
+        <div data-card-field="message">Happy birthday...</div>
+        <footer>sent with love <span>♥</span></footer>
+      </div>
+      <div class="envelope-front"><span data-card-field="cover-recipient">To: Hi Beo</span><i>OPENED WITH CARE</i></div>
+      <div class="envelope-flap" aria-hidden="true"></div>
+    </article>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

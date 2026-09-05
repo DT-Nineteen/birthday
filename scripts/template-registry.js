@@ -3,7 +3,9 @@ export const TEMPLATE_IDS = Object.freeze({
   DISCO: "midnight-disco",
   GARDEN: "paper-garden",
   FILM: "soft-film",
-  STICKER: "sticker-book"
+  STICKER: "sticker-book",
+  DOODLE: "doodle-party",
+  POST_OFFICE: "birthday-post-office"
 });
 
 export const TEMPLATES = Object.freeze([
@@ -49,6 +51,24 @@ export const TEMPLATES = Object.freeze([
     description: "Photobooth, sticker sinh nhật và chuyển động vui nhộn.",
     route: "templates/sticker-book/index.html",
     accent: "#ff6385",
+    supportsPortrait: true,
+    textLimits: Object.freeze({ name: 24, dateLabel: 24, message: 500 })
+  }),
+  Object.freeze({
+    id: TEMPLATE_IDS.DOODLE,
+    name: "Doodle Party",
+    description: "Trang lưu bút vẽ tay, rực rỡ và đầy bất ngờ.",
+    route: "templates/doodle-party/index.html",
+    accent: "#ff5d7d",
+    supportsPortrait: true,
+    textLimits: Object.freeze({ name: 24, dateLabel: 24, message: 500 })
+  }),
+  Object.freeze({
+    id: TEMPLATE_IDS.POST_OFFICE,
+    name: "Birthday Post Office",
+    description: "Một chuyến thư sinh nhật được gửi riêng đến bạn.",
+    route: "templates/birthday-post-office/index.html",
+    accent: "#f15f68",
     supportsPortrait: true,
     textLimits: Object.freeze({ name: 24, dateLabel: 24, message: 500 })
   })

@@ -52,9 +52,27 @@ test("normalizes template and portrait transform values", () => {
   assert.equal(result.recipient.portraitScale, 2.5);
 });
 
+test("normalizes every registered template without falling back", () => {
+  for (const { id } of TEMPLATES) assert.equal(normalizeCardConfig({ templateId: id }).templateId, id);
+});
+
 test("template registry has unique ids and safe fallback", () => {
-  assert.equal(new Set(TEMPLATES.map(({ id }) => id)).size, 5);
+  assert.equal(new Set(TEMPLATES.map(({ id }) => id)).size, 7);
+  assert.equal(getTemplate("birthday-post-office").route, "templates/birthday-post-office/index.html");
   assert.equal(getTemplate("missing").id, "pink-celebration");
+});
+
+test("birthday post office owns its delivery story and responsive motion", async () => {
+  const html = await readFile(new URL("../templates/birthday-post-office/index.html", import.meta.url), "utf8");
+  const css = await readFile(new URL("../templates/birthday-post-office/style.css", import.meta.url), "utf8");
+
+  assert.match(html, /data-card-portrait/);
+  assert.match(html, /data-letter-dialog/);
+  assert.match(html, /class="delivery-route"/);
+  assert.match(css, /@keyframes stamp-arrival-mobile[\s\S]*?translate3d\(0,0,0\)/);
+  assert.match(css, /@media\(max-width:658px\)[\s\S]*?animation-name:stamp-arrival-mobile/);
+  assert.match(css, /\.mobile-mail-band\{display:block/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
 });
 
 test("paper garden protects display type, portrait caption, and ambient motion", async () => {
@@ -79,6 +97,16 @@ test("sticker book resets portrait motion and keeps mobile stickers out of copy"
   assert.match(css, /\.sticker-cake\{right:2%;top:43%;bottom:auto;width:14%\}/);
 });
 
+test("doodle party owns a mobile portrait keyframe and safe decoration band", async () => {
+  const css = await readFile(new URL("../templates/doodle-party/style.css", import.meta.url), "utf8");
+
+  assert.match(css, /@keyframes doodle-photo-mobile[\s\S]*?translate3d\(0,0,0\)/);
+  assert.match(css, /@media\(max-width:658px\)[\s\S]*?animation-name:doodle-photo-mobile/);
+  assert.match(css, /\.mobile-doodle-band\{display:block/);
+  assert.match(css, /@media\(max-width:658px\)\{\.pin-two\{display:none\}\}/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+});
+
 test("production build contains builder routes and browser scripts", async () => {
   await execFileAsync(process.execPath, ["scripts/build-static-site.mjs"], {
     cwd: new URL("..", import.meta.url)
@@ -92,4 +120,6 @@ test("production build contains builder routes and browser scripts", async () =>
   assert.match(worker, /"\/templates\/paper-garden\/index\.html"/);
   assert.match(worker, /"\/templates\/soft-film\/index\.html"/);
   assert.match(worker, /"\/templates\/sticker-book\/index\.html"/);
+  assert.match(worker, /"\/templates\/doodle-party\/index\.html"/);
+  assert.match(worker, /"\/templates\/birthday-post-office\/index\.html"/);
 });

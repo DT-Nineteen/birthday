@@ -39,3 +39,19 @@ The two new templates deliberately avoid the original 40/60 visual grammar: Disc
 - Layout: expressive birthday copy on the left and a taped photobooth portrait on the right; mobile stacks the portrait above the message controls.
 - Motion: page reveal, slow headline wipe, portrait stick-and-develop, then staggered sticker pops followed by restrained ambient bobbing.
 - Signature: a project-owned SVG sticker strip turns the recipient portrait into a tactile birthday scrapbook page without obscuring the face.
+
+## Doodle Party
+
+- Palette: notebook `#FFFDF4`, marker blue `#3F83CC`, coral `#FF5D7D`, highlighter `#FFD84D`, grape `#7759D8`, ink `#27243A`.
+- Type: Titan One for the celebration lockup, Sriracha for handwritten personalization, DM Sans for notebook labels.
+- Layout: a marker-led greeting on the left and a portrait pinned inside a hand-drawn continuous frame on the right; mobile gives the portrait its own upper panel and decorations a dedicated safety band.
+- Motion: notebook reveal, slow headline strokes, portrait placement, marker frame draw, then restrained doodle pops and drifting pencil marks.
+- Signature: one animated marker line travels around the portrait and continues into an underline beneath the recipient name, making the page feel decorated by hand in real time.
+
+## Birthday Post Office
+
+- Palette: postcard cream `#FFF7E7`, stamp red `#F15F68`, postal blue `#55A9C8`, label yellow `#F4C84A`, ink `#292936`, paper white `#FFFDF8`.
+- Type: Titan One for the shipping-label celebration lockup, Sriracha for the recipient and intimate copy, DM Mono for postmarks and routing metadata, DM Sans for controls.
+- Layout: oversized delivery copy on the left and a perforated commemorative portrait stamp on the right; mobile promotes the portrait stamp to the upper stage and redraws the mail route vertically.
+- Motion: postal stage and routing label, headline labels, portrait stamp, route draw and postmark hit, address label, envelope CTA, then restrained floating postal marks.
+- Signature: the recipient becomes a one-of-one commemorative postage stamp connected to the greeting by a drawn delivery route and physical envelope reveal.

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Doodle Party</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="doodle-stage" data-motion-stage>
+    <div class="notebook-rules" aria-hidden="true"></div>
+    <header class="page-meta"><span>THE BIRTHDAY NOTEBOOK</span><b data-card-field="date-label">07 August</b><i>made just for you</i></header>
+
+    <section class="doodle-copy" aria-labelledby="doodle-title">
+      <p class="tiny-note"><span>★</span> today we celebrate</p>
+      <h1 id="doodle-title"><span>Happy</span><strong>Birthday!</strong></h1>
+      <p class="hello">HEY, <b data-card-field="recipient-name">Hi Beo</b><i>!</i></p>
+      <button class="wish-button" type="button" data-letter-open aria-haspopup="dialog"><span data-card-field="cta-label">Open your note Hi Beo</span><i>→</i></button>
+      <p class="side-note">one brilliant human<br>deserves one brilliant day</p>
+    </section>
+
+    <section class="portrait-page" aria-label="Ảnh người nhận">
+      <div class="pin pin-one" aria-hidden="true"></div><div class="pin pin-two" aria-hidden="true"></div>
+      <figure>
+        <div class="portrait-window"><img src="../../images/unnamed.png" alt="Chân dung người nhận" data-card-portrait></div>
+        <figcaption><span>FOR YOU</span><strong data-card-field="recipient-name">Hi Beo</strong><b>♥</b></figcaption>
+      </figure>
+      <svg class="marker-frame" viewBox="0 0 520 430" aria-hidden="true"><path d="M34 72C28 28 77 19 139 22c89 4 180-8 270 1 65 6 83 39 76 95-8 72 6 145-5 218-7 48-35 65-91 62-94-5-189 10-283-1-61-7-77-35-72-92 6-78-5-155 0-233Z"/><path d="M78 412c80-19 183-9 272-11 54-1 98 4 133-13"/></svg>
+    </section>
+
+    <div class="doodle doodle-sun" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="25"/><path d="M60 6v18m0 72v18M6 60h18m72 0h18M22 22l13 13m50 50 13 13M98 22 85 35M35 85 22 98"/></svg></div>
+    <div class="doodle doodle-hat" aria-hidden="true"><svg viewBox="0 0 130 130"><path d="m26 101 45-83 35 92Z"/><path d="M52 52c15 11 27 14 41 13M37 80c18 12 39 17 58 14"/><circle cx="72" cy="17" r="10"/></svg></div>
+    <div class="doodle doodle-cake" aria-hidden="true"><svg viewBox="0 0 150 135"><path d="M25 66h100v55H25Z"/><path d="M24 67c12-22 25 12 38-2 11-12 22 12 35-1 11-11 20 5 29 1"/><path d="M48 64V35m28 29V29m28 35V37"/><path d="M42 31c-4-13 7-19 7-19s9 10-1 19m22-6c-4-13 7-19 7-19s9 10-1 19m22 8c-4-13 7-19 7-19s9 10-1 19"/></svg></div>
+    <div class="doodle doodle-heart" aria-hidden="true"><svg viewBox="0 0 110 100"><path d="M55 88C14 62 10 38 24 23c13-13 27-4 31 7 5-11 20-20 32-7 16 17 9 40-32 65Z"/></svg></div>
+    <div class="doodle doodle-arrow" aria-hidden="true"><svg viewBox="0 0 170 80"><path d="M8 55c39-35 84-31 141-25M126 10l27 20-23 24"/></svg></div>
+    <div class="mobile-doodle-band" aria-hidden="true"><span>✦</span><b>MAKE A WISH</b><i>♥</i></div>
+    <footer><span>drawn with good wishes</span><b>PAGE FOR <span data-card-field="recipient-name">HI BEO</span></b></footer>
+  </main>
+
+  <section class="doodle-letter" data-letter-dialog role="dialog" aria-modal="true" aria-hidden="true" aria-label="Lời chúc sinh nhật" inert>
+    <button class="letter-close" type="button" data-letter-close aria-label="Đóng lời chúc">×</button>
+    <article class="notebook-letter">
+      <aside><span>A NOTE FOR</span><strong data-card-field="cover-recipient">Hi Beo</strong><svg viewBox="0 0 90 80" aria-hidden="true"><path d="M45 71C12 50 10 29 22 18c10-10 20-3 23 6 4-9 15-16 24-6 13 13 7 32-24 53Z"/></svg></aside>
+      <div class="letter-copy"><p data-card-field="date-label">07 August</p><h2 data-card-field="recipient-name">Hi Beo</h2><div data-card-field="message">Happy birthday...</div></div>
+    </article>
+  </section>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

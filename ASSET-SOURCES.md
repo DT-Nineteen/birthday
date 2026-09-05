@@ -24,7 +24,11 @@ Soft Film uses only the user-selected portrait plus CSS-generated grain, light l
 
 Birthday Sticker Book uses project-authored inline SVG artwork for its balloon, cake, gift, bow and sparkle stickers, plus CSS-generated paper grid, tape and confetti. It introduces no external raster asset.
 
+Doodle Party uses project-authored inline SVG doodles for its marker trail, sun, cake, party hat, spark and heart motifs. Notebook rules, highlighter strokes and pencil marks are CSS-generated. It introduces no external raster asset.
+
+Birthday Post Office uses a project-authored inline SVG delivery route and postmark plus CSS-generated stamp perforations, airmail edging, postal labels, envelope geometry and paper texture. It introduces no external raster asset beyond the user-selected portrait.
+
 ## Fonts and icons
 
-- Google Fonts are loaded from Google Fonts CSS: Archivo Black, Shrikhand, DM Mono, Fraunces, Kalam, DM Sans, Titan One, Sriracha, Dancing Script, and Poppins. Verify the individual SIL Open Font License files when vendoring fonts for production.
+- Google Fonts are loaded from Google Fonts CSS: Archivo Black, Shrikhand, DM Mono, Fraunces, Kalam, DM Sans, Titan One, Sriracha, Dancing Script, and Poppins. Birthday Post Office reuses DM Mono, DM Sans, Titan One and Sriracha; it adds no new font family. Verify the individual SIL Open Font License files when vendoring fonts for production.
 - Font Awesome remains in the original Pink Celebration template through its existing CDN integration. The new templates use Unicode symbols and project-owned raster decoration instead.
